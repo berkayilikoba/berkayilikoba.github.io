@@ -39,7 +39,8 @@
   nav {
     display: flex;
     gap: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    justify-content: center;
   }
   nav a {
     color: #bbbbbb;
@@ -69,6 +70,11 @@
     border-bottom: 2px solid #61dafb;
     padding-bottom: 0.3rem;
   }
+  p, dd {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #ccc;
+  }
   ul {
     list-style: none;
   }
@@ -96,6 +102,22 @@
     font-size: 0.9rem;
     margin-top: auto;
   }
+  /* Profil kısmı için dl düzeni */
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    row-gap: 0.9rem;
+    column-gap: 1.5rem;
+    color: #ccc;
+    font-size: 1.05rem;
+  }
+  dt {
+    font-weight: 700;
+    color: #8ac6ff;
+  }
+  dd {
+    margin-left: 0;
+  }
 
   @media (max-width: 600px) {
     nav {
@@ -113,6 +135,7 @@
   <p>Çukurova Üniversitesi Bilgisayar Mühendisliği 2. Sınıf Öğrencisi</p>
   <nav>
     <a href="#about">Hakkımda</a>
+    <a href="#profile">Profil</a>
     <a href="#projects">Projeler</a>
     <a href="#contact">İletişim</a>
   </nav>
@@ -122,6 +145,29 @@
   <section id="about" tabindex="0">
     <h2>Hakkımda</h2>
     <p>Merhaba! Ben Berkay ILIKOBA. Yapay zeka, bilgisayarla görme ve gömülü sistemler üzerine çalışıyorum. Python, TensorFlow, OpenCV gibi kütüphanelerle projeler geliştiriyorum.</p>
+  </section>
+
+  <section id="profile" tabindex="0" style="background: #1e1e1e; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); margin-bottom: 3rem;">
+    <h2>Profil</h2>
+    <dl>
+      <dt>Location:</dt>
+      <dd>Victoria, BC</dd>
+
+      <dt>Age:</dt>
+      <dd>29</dd>
+
+      <dt>Nationality:</dt>
+      <dd>Canadian / Irish</dd>
+
+      <dt>Interests:</dt>
+      <dd>Motorcycles, Muay Thai, Banjos</dd>
+
+      <dt>Study:</dt>
+      <dd>University of Victoria</dd>
+
+      <dt>Employment:</dt>
+      <dd>Instant Domains, inc.</dd>
+    </dl>
   </section>
 
   <section id="projects" tabindex="0">
@@ -144,8 +190,8 @@
 
   <section id="contact" tabindex="0">
     <h2>İletişim</h2>
-    <p>E-posta: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener noreferrer">github.com/berkayilikoba</a></p>
+    <p>E-posta: <a href="mailto:ilikobaberkay@gmail.com" style="color:#61dafb;">ilikobaberkay@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener noreferrer" style="color:#61dafb;">github.com/berkayilikoba</a></p>
   </section>
 </main>
 
