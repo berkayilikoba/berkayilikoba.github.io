@@ -4,7 +4,6 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Berkay ILIKOBA</title>
-<link rel="icon" href="https://avatars.githubusercontent.com/u/104388746?v=4" type="image/png">
 <style>
   body {
     background-color: #121212;
@@ -23,49 +22,201 @@
     max-width: 960px;
     margin: auto;
   }
-  header {
-    text-align: center;
+
+  /* Üst kart bölümü */
+  .top-section {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+  }
+  .top-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(80,150,250,0.5);
+  }
+  .top-image img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+  }
+  .top-text {
+    flex: 1;
+    background-color: #222;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  }
+  .top-text code {
+    color: #50fa7b;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .top-text h1 {
+    font-size: 2.2rem;
+    margin: 0.5rem 0 1rem 0;
+    color: #fff;
+  }
+  .top-text p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .top-text strong {
+    color: #f8f8f2;
+  }
+  .top-text .buttons {
+    margin-top: 1.5rem;
+  }
+  .btn {
+    display: inline-block;
+    background: transparent;
+    border: 1.5px solid #50fa7b;
+    color: #50fa7b;
+    border-radius: 20px;
+    padding: 0.4rem 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+  }
+  .btn:hover {
+    background-color: #50fa7b;
+    color: #121212;
+  }
+
+  /* Alt about kısmı */
+  .about-section {
+    background-color: #222;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    display: flex;
+    gap: 2rem;
+    color: #bbb;
     margin-bottom: 3rem;
   }
-  header h1 {
-    font-size: 2.5rem;
-    color: #50fa7b;
-    margin-bottom: 0.5rem;
+  .about-text {
+    flex: 2;
   }
-  header p {
-    color: #aaa;
+  .about-text h2 {
+    color: #50fa7b;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .about-text p {
+    margin-bottom: 1rem;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .tag {
+    background-color: #444;
+    color: #50fa7b;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .tag svg {
+    fill: #50fa7b;
+    width: 16px;
+    height: 16px;
+  }
+  .about-image {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(80,250,123,0.2);
+  }
+  .about-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  /* Projeler ve iletişim bölümleri */
+  .projects-section, .contact-section {
+    background-color: #222;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    color: #bbb;
+    margin-bottom: 3rem;
+  }
+  .projects-section h2, .contact-section h2 {
+    color: #50fa7b;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .project-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .project-list li {
+    background-color: #333;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+  }
+  .project-list li:hover {
+    background-color: #50fa7b;
+    color: #121212;
+  }
+  .project-list a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .project-list a:hover {
+    text-decoration: underline;
+  }
+  .contact-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .contact-list li {
+    margin-bottom: 1rem;
     font-size: 1.1rem;
   }
-  nav {
-    text-align: center;
-    margin-bottom: 3rem;
+  .contact-list a {
+    color: #61dafb;
+    text-decoration: none;
   }
-  nav a {
-    margin: 0 1rem;
-    font-weight: 600;
+  .contact-list a:hover {
+    text-decoration: underline;
   }
-  footer {
-    text-align: center;
-    color: #666;
-    font-size: 0.9rem;
-    margin-top: 4rem;
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .top-section, .about-section {
+      flex-direction: column;
+    }
+    .top-text, .top-image, .about-text, .about-image {
+      width: 100%;
+    }
+    .top-image {
+      height: 250px;
+    }
+    .about-image {
+      height: 200px;
+    }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Berkay ILIKOBA</h1>
-  <p>Yapay Zeka | Görüntü İşleme | Gömülü Sistemler | Takım Kaptanı</p>
-</header>
-
-<nav>
-  <a href="#about">Hakkımda</a>
-  <a href="#projects">Projeler</a>
-  <a href="#contact">İletişim</a>
-</nav>
-
 <div class="container">
+
   <!-- Üst Kart -->
   <div class="top-section">
     <div class="top-image">
@@ -84,17 +235,17 @@
   </div>
 
   <!-- About Bölümü -->
-  <div class="about-section" id="about">
+  <div class="about-section">
     <div class="about-text">
       <h2>Hakkımda</h2>
       <p>Bilgisayar mühendisliği 1. sınıf öğrencisiyim ve yaklaşık 10 yıldır programlamayla iç içeyim. Python'da iyi seviyedeyim ve görüntü işleme ile makine öğrenmesi alanlarında çeşitli giriş ve orta seviye projeler geliştirdim.</p>
       <p>Teknofest Savaşan İHA takım kaptanı olarak hem teknik bilgi hem de liderlik becerilerimi geliştiriyorum. Amacım akademisyenlik ve yazılım alanında derinleşmek.</p>
       <div class="tags">
-        <div class="tag">Yaş: 21</div>
-        <div class="tag">İlgi Alanları: Görüntü İşleme, Robotik, Makine Öğrenmesi, Bilgisayarlı Görü</div>
-        <div class="tag">Eğitim: Çukurova Üniversitesi</div>
-        <div class="tag">Konum: Adana, Türkiye</div>
-        <div class="tag">Takım: Huawei Student Developers</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Yaş: 21</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> İlgi Alanları: Görüntü İşleme, Robotik, Makine Öğrenmesi, Bilgisayarlı Görü</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Eğitim: Çukurova Üniversitesi</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Konum: Adana, Türkiye</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Takım: Huawei Student Developers</div>
       </div>
     </div>
     <div class="about-image">
@@ -103,7 +254,7 @@
   </div>
 
   <!-- Projeler Bölümü -->
-  <div class="projects-section" id="projects">
+  <div class="projects-section">
     <h2>Projeler</h2>
     <ul class="project-list">
       <li><a href="https://github.com/berkayilikoba/MNIST-CNN-Classifier" target="_blank" rel="noopener">MNIST CNN Classifier</a> - Keras kullanarak el yazısı rakamları sınıflandıran konvolüsyonel sinir ağı projesi.</li>
@@ -113,21 +264,17 @@
   </div>
 
   <!-- İletişim Bölümü -->
-  <div class="contact-section" id="contact">
+  <div class="contact-section">
     <h2>İletişim</h2>
     <ul class="contact-list">
       <li>Email: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></li>
       <li>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener">github.com/berkayilikoba</a></li>
       <li>LinkedIn: <a href="https://linkedin.com/in/berkay-ilikoba" target="_blank" rel="noopener">linkedin.com/in/berkay-ilikoba</a></li>
-      <li>Medium: <a href="https://medium.com/@berkayilikoba" target="_blank" rel="noopener">medium.com/@berkayilikoba</a></li>
+      
     </ul>
   </div>
 
 </div>
-
-<footer>
-  <p>&copy; 2025 Berkay ILIKOBA. Tüm hakları saklıdır.</p>
-</footer>
 
 </body>
 </html>
