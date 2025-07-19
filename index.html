@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Berkay ILIKOBA</title>
   <style>
-    /* Temel sıfırlama */
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f2f5;
-      color: #333;
+      background: #121212;
+      color: #e0e0e0;
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
@@ -23,71 +23,189 @@
     }
 
     header {
-      background-color: #005f73;
-      color: #fff;
+      background-color: #008080;
+      color: #e0f2f1;
       padding: 1.5rem 2rem;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 128, 128, 0.7);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      font-weight: 700;
-      letter-spacing: 1.2px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      font-size: 2.4rem;
+      user-select: none;
     }
 
     nav {
-      margin-top: 10px;
+      margin-top: 12px;
     }
 
     nav a {
-      color: #e0fbfc;
+      color: #b2dfdb;
       text-decoration: none;
-      margin: 0 12px;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      margin: 0 18px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    nav a:hover {
-      color: #94d2bd;
+    nav a:hover,
+    nav a:focus {
+      background-color: #004d4d;
+      color: #a7ffeb;
+      outline: none;
     }
 
     main {
       flex: 1;
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      margin: 2.5rem auto 3rem;
+      padding: 0 1.5rem;
     }
 
     section {
-      background: #fff;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      background: #1e272e;
+      padding: 2.4rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 128, 128, 0.4);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 150, 150, 0.6);
     }
 
     section h2 {
-      margin-bottom: 1rem;
-      color: #0a9396;
-      border-bottom: 2px solid #94d2bd;
-      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+      color: #26a69a;
+      border-bottom: 3px solid #004d4d;
+      padding-bottom: 0.8rem;
+      user-select: none;
+    }
+
+    p, ul {
+      font-size: 1.05rem;
+      line-height: 1.5;
+      user-select: text;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background-color: #004d4d;
+      margin-bottom: 12px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    ul li:hover {
+      background-color: #26a69a;
+      color: #121212;
+    }
+
+    a {
+      color: #4db6ac;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover,
+    a:focus {
+      color: #80cbc4;
+      outline: none;
+      text-decoration: underline;
     }
 
     footer {
-      background-color: #001219;
-      color: #94d2bd;
+      background-color: #004d4d;
+      color: #a7ffeb;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
+      padding: 1.3rem;
+      font-size: 0.95rem;
+      user-select: none;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none; /* gizli */
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(18,18,18,0.85);
+      backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background-color: #263238;
+      padding: 2rem 2.5rem;
+      border-radius: 15px;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(38,50,56,0.8);
+      color: #cfd8dc;
+      position: relative;
+      user-select: text;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+      color: #80cbc4;
+      user-select: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #80cbc4;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      user-select: none;
+    }
+
+    .close-btn:hover {
+      color: #b2dfdb;
     }
 
     /* Responsive */
     @media (max-width: 600px) {
       nav a {
-        display: inline-block;
-        margin: 8px 0;
+        display: block;
+        margin: 10px 0;
+      }
+
+      section {
+        padding: 1.8rem 1.5rem;
       }
     }
+
   </style>
 </head>
 <body>
@@ -103,32 +221,104 @@
   </header>
 
   <main>
-    <section id="about">
+    <section id="about" tabindex="0">
       <h2>Hakkımda</h2>
-      <p>Merhaba, Ben Berkay ILIKOBA. Çukurova Üniversitesi Bilgisayar Mühendisliği 2. Sınıf öğrencisiyim. </p>
-
-</p>
+      <p>Merhaba, Ben Berkay ILIKOBA. Çukurova Üniversitesi Bilgisayar Mühendisliği 2. Sınıf öğrencisiyim.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" tabindex="0">
       <h2>Projeler</h2>
       <ul>
-        <li><strong>MNIST El Yazısı Tanıma</strong> - Python ve TensorFlow kullanarak geliştirdim.</li>
-        <li><strong>Gerçek Zamanlı Görüntü İşleme</strong> - OpenCV ile renk algılama ve nesne takibi.</li>
-        <li><strong>Teknofest Savaşan İHA</strong> - Takım kaptanı olarak görev aldım.</li>
+        <li tabindex="0" data-modal="modal1">MNIST El Yazısı Tanıma</li>
+        <li tabindex="0" data-modal="modal2">Gerçek Zamanlı Görüntü İşleme</li>
+        <li tabindex="0" data-modal="modal3">Teknofest Savaşan İHA</li>
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="contact" tabindex="0">
       <h2>İletişim</h2>
       <p>E-posta: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank">github.com/berkayilikoba</a></p>
+      <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener noreferrer">github.com/berkayilikoba</a></p>
     </section>
   </main>
 
   <footer>
     © 2025 Berkay ILIKOBA - Tüm Hakları Saklıdır.
   </footer>
+
+  <!-- Modallar -->
+  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Kapat">&times;</span>
+      <h3 id="modal1-title">MNIST El Yazısı Tanıma</h3>
+      <p>Python ve TensorFlow kullanarak geliştirdiğim bu projede, el yazısı rakamların sınıflandırılması üzerine yoğunlaştım. Derin öğrenme modelleriyle yüksek doğruluk oranları elde ettim ve modeli gerçek zamanlı olarak test ettim.</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Kapat">&times;</span>
+      <h3 id="modal2-title">Gerçek Zamanlı Görüntü İşleme</h3>
+      <p>OpenCV ile renk algılama, nesne takibi ve görüntü filtreleme tekniklerini içeren gerçek zamanlı bir görüntü işleme projesi geliştirdim. Performans optimizasyonlarına önem verdim.</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title">
+    <div class="modal-content">
+      <span class="close-btn" aria-label="Kapat">&times;</span>
+      <h3 id="modal3-title">Teknofest Savaşan İHA</h3>
+      <p>Takım kaptanı olarak görev aldığım bu projede, insansız hava aracı tasarımı, kontrolü ve takım koordinasyonunu yönettim. Yazılım ve donanım entegrasyonunu sağladım.</p>
+    </div>
+  </div>
+
+  <script>
+    // Modal açma/kapatma
+    const modalTriggers = document.querySelectorAll('[data-modal]');
+    const modals = document.querySelectorAll('.modal');
+    const closeButtons = document.querySelectorAll('.close-btn');
+
+    modalTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const modalId = trigger.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        modal.style.display = 'flex';
+        modal.querySelector('.close-btn').focus();
+      });
+      // Klavyeyle açmak için Enter veya Space tuşları
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          trigger.click();
+        }
+      });
+    });
+
+    closeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.closest('.modal').style.display = 'none';
+      });
+    });
+
+    // Modal dışına tıklayınca kapatma
+    modals.forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+
+    // ESC tuşu ile kapatma
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modals.forEach(modal => {
+          if (modal.style.display === 'flex') {
+            modal.style.display = 'none';
+          }
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
