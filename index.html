@@ -1,36 +1,50 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Berkay ILIKOBA</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
     /* Reset */
-    * {
+    *, *::before, *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #121820;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #121820;
       color: #dbe9f4;
-      line-height: 1.6;
+      line-height: 1.65;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #8bb5ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #d0e6ff;
+      text-decoration: underline;
+      outline: none;
     }
 
     header {
-      background-color: #0a3d62; /* koyu ve güven verici mavi */
+      background: linear-gradient(135deg, #0a3d62, #1e4f8f);
       color: #d0e6ff;
-      padding: 1.5rem 2rem;
+      padding: 1.8rem 2rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(10, 61, 98, 0.85);
+      box-shadow: 0 4px 15px rgba(10, 61, 98, 0.85);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -39,110 +53,119 @@
     header h1 {
       font-weight: 800;
       letter-spacing: 2px;
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       user-select: none;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
     }
 
     nav {
-      margin-top: 12px;
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: #a3c4f3;
-      text-decoration: none;
-      margin: 0 18px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 6px 10px;
+      font-weight: 600;
+      font-size: 1.15rem;
+      padding: 6px 12px;
       border-radius: 6px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      position: relative;
     }
 
-    nav a:hover,
-    nav a:focus {
-      background-color: #063d7f;
-      color: #c5dbff;
-      outline: none;
+    /* Alt çizgi animasyonu */
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background: #8bb5ff;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav a:hover::after,
+    nav a:focus::after {
+      width: 100%;
     }
 
     main {
       flex: 1;
-      max-width: 900px;
-      margin: 2.5rem auto 3rem;
-      padding: 0 1.5rem;
+      max-width: 960px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
+      scroll-margin-top: 100px; /* header yüksekliği için */
     }
 
     section {
-      background: #1f2a38; /* koyu mavi-gri ton */
-      padding: 2.4rem 2rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(10, 61, 98, 0.5);
-      transition: transform 0.3s ease;
+      background: #1f2a38;
+      padding: 3rem 2.5rem;
+      margin-bottom: 2.5rem;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(10, 61, 98, 0.5);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
       cursor: default;
     }
 
     section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(20, 90, 150, 0.75);
+      transform: translateY(-6px);
+      box-shadow: 0 14px 40px rgba(20, 90, 150, 0.75);
     }
 
     section h2 {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
       color: #74a9ff;
       border-bottom: 3px solid #063d7f;
       padding-bottom: 0.8rem;
+      font-weight: 700;
+      font-size: 1.9rem;
       user-select: none;
+      text-shadow: 0 0 4px rgba(116, 169, 255, 0.7);
     }
 
     p, ul {
-      font-size: 1.05rem;
-      line-height: 1.5;
+      font-size: 1.1rem;
+      line-height: 1.6;
       user-select: text;
     }
 
     ul {
       list-style-type: none;
       padding-left: 0;
+      margin-top: 0.8rem;
     }
 
     ul li {
       background-color: #063d7f;
-      margin-bottom: 12px;
-      padding: 12px 18px;
-      border-radius: 8px;
+      margin-bottom: 14px;
+      padding: 14px 22px;
+      border-radius: 10px;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
       color: #c5dbff;
+      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
     }
 
-    ul li:hover {
+    ul li:hover,
+    ul li:focus {
       background-color: #4a6edb;
       color: #eef4ff;
-    }
-
-    a {
-      color: #8bb5ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    a:hover,
-    a:focus {
-      color: #d0e6ff;
       outline: none;
-      text-decoration: underline;
+      box-shadow: 0 0 15px rgba(74, 110, 219, 0.7);
     }
 
     footer {
-      background-color: #063d7f;
+      background: linear-gradient(135deg, #063d7f, #1e4f8f);
       color: #c5dbff;
       text-align: center;
-      padding: 1.3rem;
-      font-size: 0.95rem;
+      padding: 1.8rem 2rem;
+      font-size: 1rem;
       user-select: none;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.4);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.45);
     }
 
     /* Modal Styles */
@@ -155,61 +178,92 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(18,24,32,0.9);
-      backdrop-filter: blur(6px);
+      background-color: rgba(18,24,32,0.95);
+      backdrop-filter: blur(8px);
       align-items: center;
       justify-content: center;
-      padding: 20px;
+      padding: 24px;
     }
 
     .modal-content {
       background-color: #25344a;
-      padding: 2rem 2.5rem;
-      border-radius: 15px;
-      max-width: 600px;
-      width: 90%;
-      box-shadow: 0 8px 20px rgba(37,52,74,0.9);
+      padding: 2.5rem 3rem;
+      border-radius: 18px;
+      max-width: 640px;
+      width: 100%;
+      box-shadow: 0 10px 32px rgba(37,52,74,0.95);
       color: #dbe9f4;
       position: relative;
       user-select: text;
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      font-weight: 400;
     }
 
     .modal-content h3 {
       margin-top: 0;
+      margin-bottom: 1.2rem;
       color: #8bb5ff;
+      font-weight: 700;
       user-select: none;
+      text-shadow: 0 0 6px rgba(139, 181, 255, 0.8);
     }
 
     .close-btn {
       position: absolute;
-      top: 14px;
-      right: 18px;
-      font-size: 1.8rem;
+      top: 18px;
+      right: 22px;
+      font-size: 2.2rem;
       font-weight: 700;
       color: #8bb5ff;
       cursor: pointer;
       transition: color 0.3s ease;
       user-select: none;
+      border-radius: 4px;
+      padding: 0 6px;
     }
 
-    .close-btn:hover {
-      color: #c5dbff;
+    .close-btn:hover,
+    .close-btn:focus {
+      color: #d0e6ff;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.1);
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 10px 0;
+    @media (max-width: 700px) {
+      main {
+        padding: 0 1.2rem;
       }
 
       section {
-        padding: 1.8rem 1.5rem;
+        padding: 2.2rem 1.6rem;
+      }
+
+      nav {
+        gap: 14px;
+      }
+
+      nav a {
+        font-size: 1rem;
+        padding: 5px 10px;
       }
     }
 
+    @media (max-width: 420px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      ul li {
+        padding: 12px 16px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -323,6 +377,5 @@
       }
     });
   </script>
-
 </body>
 </html>
