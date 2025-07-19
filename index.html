@@ -1,381 +1,157 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Berkay ILIKOBA</title>
-  
-  <!-- Google Fonts: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Berkay ILIKOBA</title>
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  header h1 {
+    font-weight: 700;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.2rem;
+  }
+  header p {
+    font-weight: 300;
+    color: #a0a0a0;
+    font-size: 1.2rem;
+  }
+  nav {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  nav a {
+    color: #bbbbbb;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    transition: color 0.3s ease;
+  }
+  nav a:hover, nav a:focus {
+    color: #61dafb;
+    outline: none;
+  }
+  main {
+    max-width: 700px;
+    width: 100%;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #61dafb;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #61dafb;
+    padding-bottom: 0.3rem;
+  }
+  ul {
+    list-style: none;
+  }
+  ul li {
+    background-color: #1e1e1e;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    cursor: default;
+    transition: background-color 0.3s ease;
+  }
+  ul li:hover, ul li:focus {
+    background-color: #282828;
+    outline: none;
+  }
+  ul li strong {
+    display: block;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+  }
+  footer {
+    text-align: center;
+    color: #666666;
+    font-size: 0.9rem;
+    margin-top: auto;
+  }
 
-  <style>
-    /* Reset */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background-color: #121820;
-      color: #dbe9f4;
-      line-height: 1.65;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      scroll-behavior: smooth;
-    }
-
-    a {
-      color: #8bb5ff;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:hover, a:focus {
-      color: #d0e6ff;
-      text-decoration: underline;
-      outline: none;
-    }
-
-    header {
-      background: linear-gradient(135deg, #0a3d62, #1e4f8f);
-      color: #d0e6ff;
-      padding: 1.8rem 2rem;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(10, 61, 98, 0.85);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header h1 {
-      font-weight: 800;
-      letter-spacing: 2px;
-      font-size: 2.8rem;
-      user-select: none;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    }
-
+  @media (max-width: 600px) {
     nav {
-      margin-top: 14px;
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      font-weight: 600;
-      font-size: 1.15rem;
-      padding: 6px 12px;
-      border-radius: 6px;
-      position: relative;
-    }
-
-    /* Alt çizgi animasyonu */
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
-      bottom: 0;
-      background: #8bb5ff;
-      transition: width 0.3s ease;
-      border-radius: 2px;
-    }
-
-    nav a:hover::after,
-    nav a:focus::after {
-      width: 100%;
-    }
-
-    main {
-      flex: 1;
-      max-width: 960px;
-      margin: 3rem auto 4rem;
-      padding: 0 2rem;
-      scroll-margin-top: 100px; /* header yüksekliği için */
-    }
-
-    section {
-      background: #1f2a38;
-      padding: 3rem 2.5rem;
-      margin-bottom: 2.5rem;
-      border-radius: 14px;
-      box-shadow: 0 8px 30px rgba(10, 61, 98, 0.5);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-      cursor: default;
-    }
-
-    section:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 14px 40px rgba(20, 90, 150, 0.75);
-    }
-
-    section h2 {
-      margin-bottom: 1.5rem;
-      color: #74a9ff;
-      border-bottom: 3px solid #063d7f;
-      padding-bottom: 0.8rem;
-      font-weight: 700;
-      font-size: 1.9rem;
-      user-select: none;
-      text-shadow: 0 0 4px rgba(116, 169, 255, 0.7);
-    }
-
-    p, ul {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      user-select: text;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-top: 0.8rem;
-    }
-
-    ul li {
-      background-color: #063d7f;
-      margin-bottom: 14px;
-      padding: 14px 22px;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      color: #c5dbff;
-      box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
-    }
-
-    ul li:hover,
-    ul li:focus {
-      background-color: #4a6edb;
-      color: #eef4ff;
-      outline: none;
-      box-shadow: 0 0 15px rgba(74, 110, 219, 0.7);
-    }
-
-    footer {
-      background: linear-gradient(135deg, #063d7f, #1e4f8f);
-      color: #c5dbff;
-      text-align: center;
-      padding: 1.8rem 2rem;
-      font-size: 1rem;
-      user-select: none;
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.45);
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none; /* gizli */
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(18,24,32,0.95);
-      backdrop-filter: blur(8px);
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 24px;
+      gap: 1rem;
     }
-
-    .modal-content {
-      background-color: #25344a;
-      padding: 2.5rem 3rem;
-      border-radius: 18px;
-      max-width: 640px;
-      width: 100%;
-      box-shadow: 0 10px 32px rgba(37,52,74,0.95);
-      color: #dbe9f4;
-      position: relative;
-      user-select: text;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      font-weight: 400;
-    }
-
-    .modal-content h3 {
-      margin-top: 0;
-      margin-bottom: 1.2rem;
-      color: #8bb5ff;
-      font-weight: 700;
-      user-select: none;
-      text-shadow: 0 0 6px rgba(139, 181, 255, 0.8);
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 18px;
-      right: 22px;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #8bb5ff;
-      cursor: pointer;
-      transition: color 0.3s ease;
-      user-select: none;
-      border-radius: 4px;
-      padding: 0 6px;
-    }
-
-    .close-btn:hover,
-    .close-btn:focus {
-      color: #d0e6ff;
-      outline: none;
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      main {
-        padding: 0 1.2rem;
-      }
-
-      section {
-        padding: 2.2rem 1.6rem;
-      }
-
-      nav {
-        gap: 14px;
-      }
-
-      nav a {
-        font-size: 1rem;
-        padding: 5px 10px;
-      }
-    }
-
-    @media (max-width: 420px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      ul li {
-        padding: 12px 16px;
-        font-size: 1rem;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>Berkay ILIKOBA</h1>
-    <nav>
-      <a href="#about">Hakkımda</a>
-      <a href="#medium">Medium Yazılarım</a>
-      <a href="#projects">Projeler</a>
-      <a href="#contact">İletişim</a>
-    </nav>
-  </header>
+<header>
+  <h1>Berkay ILIKOBA</h1>
+  <p>Çukurova Üniversitesi Bilgisayar Mühendisliği 2. Sınıf Öğrencisi</p>
+  <nav>
+    <a href="#about">Hakkımda</a>
+    <a href="#projects">Projeler</a>
+    <a href="#contact">İletişim</a>
+  </nav>
+</header>
 
-  <main>
-    <section id="about" tabindex="0">
-      <h2>Hakkımda</h2>
-      <p>Merhaba, Ben Berkay ILIKOBA. Çukurova Üniversitesi Bilgisayar Mühendisliği 2. Sınıf öğrencisiyim.</p>
-    </section>
+<main>
+  <section id="about" tabindex="0">
+    <h2>Hakkımda</h2>
+    <p>Merhaba! Ben Berkay ILIKOBA. Yapay zeka, bilgisayarla görme ve gömülü sistemler üzerine çalışıyorum. Python, TensorFlow, OpenCV gibi kütüphanelerle projeler geliştiriyorum.</p>
+  </section>
 
-    <section id="projects" tabindex="0">
-      <h2>Projeler</h2>
-      <ul>
-        <li tabindex="0" data-modal="modal1">MNIST El Yazısı Tanıma</li>
-        <li tabindex="0" data-modal="modal2">Gerçek Zamanlı Görüntü İşleme</li>
-        <li tabindex="0" data-modal="modal3">Teknofest Savaşan İHA</li>
-      </ul>
-    </section>
+  <section id="projects" tabindex="0">
+    <h2>Projeler</h2>
+    <ul>
+      <li tabindex="0">
+        <strong>MNIST El Yazısı Tanıma</strong>
+        Python ve TensorFlow kullanarak geliştirdiğim derin öğrenme projesi.
+      </li>
+      <li tabindex="0">
+        <strong>Gerçek Zamanlı Görüntü İşleme</strong>
+        OpenCV ile renk algılama ve nesne takibi projeleri.
+      </li>
+      <li tabindex="0">
+        <strong>Teknofest Savaşan İHA</strong>
+        Takım kaptanı olarak görev aldığım insansız hava aracı projesi.
+      </li>
+    </ul>
+  </section>
 
-    <section id="contact" tabindex="0">
-      <h2>İletişim</h2>
-      <p>E-posta: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></p>
-      <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener noreferrer">github.com/berkayilikoba</a></p>
-    </section>
-  </main>
+  <section id="contact" tabindex="0">
+    <h2>İletişim</h2>
+    <p>E-posta: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener noreferrer">github.com/berkayilikoba</a></p>
+  </section>
+</main>
 
-  <footer>
-    © 2025 Berkay ILIKOBA - Tüm Hakları Saklıdır.
-  </footer>
+<footer>
+  © 2025 Berkay ILIKOBA - Tüm Hakları Saklıdır.
+</footer>
 
-  <!-- Modallar -->
-  <div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title">
-    <div class="modal-content">
-      <span class="close-btn" aria-label="Kapat">&times;</span>
-      <h3 id="modal1-title">MNIST El Yazısı Tanıma</h3>
-      <p>Python ve TensorFlow kullanarak geliştirdiğim bu projede, el yazısı rakamların sınıflandırılması üzerine yoğunlaştım. Derin öğrenme modelleriyle yüksek doğruluk oranları elde ettim ve modeli gerçek zamanlı olarak test ettim.</p>
-    </div>
-  </div>
-
-  <div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title">
-    <div class="modal-content">
-      <span class="close-btn" aria-label="Kapat">&times;</span>
-      <h3 id="modal2-title">Gerçek Zamanlı Görüntü İşleme</h3>
-      <p>OpenCV ile renk algılama, nesne takibi ve görüntü filtreleme tekniklerini içeren gerçek zamanlı bir görüntü işleme projesi geliştirdim. Performans optimizasyonlarına önem verdim.</p>
-    </div>
-  </div>
-
-  <div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title">
-    <div class="modal-content">
-      <span class="close-btn" aria-label="Kapat">&times;</span>
-      <h3 id="modal3-title">Teknofest Savaşan İHA</h3>
-      <p>Takım kaptanı olarak görev aldığım bu projede, insansız hava aracı tasarımı, kontrolü ve takım koordinasyonunu yönettim. Yazılım ve donanım entegrasyonunu sağladım.</p>
-    </div>
-  </div>
-
-  <script>
-    // Modal açma/kapatma
-    const modalTriggers = document.querySelectorAll('[data-modal]');
-    const modals = document.querySelectorAll('.modal');
-    const closeButtons = document.querySelectorAll('.close-btn');
-
-    modalTriggers.forEach(trigger => {
-      trigger.addEventListener('click', () => {
-        const modalId = trigger.getAttribute('data-modal');
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'flex';
-        modal.querySelector('.close-btn').focus();
-      });
-      // Klavyeyle açmak için Enter veya Space tuşları
-      trigger.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          trigger.click();
-        }
-      });
-    });
-
-    closeButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.closest('.modal').style.display = 'none';
-      });
-    });
-
-    // Modal dışına tıklayınca kapatma
-    modals.forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-
-    // ESC tuşu ile kapatma
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        modals.forEach(modal => {
-          if (modal.style.display === 'flex') {
-            modal.style.display = 'none';
-          }
-        });
-      }
-    });
-  </script>
 </body>
 </html>
