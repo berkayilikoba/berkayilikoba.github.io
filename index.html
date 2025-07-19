@@ -1,280 +1,106 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Berkay ILIKOBA</title>
-<style>
-  body {
-    background-color: #121212;
-    color: #ddd;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 2rem;
-  }
-  a {
-    color: #61dafb;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .container {
-    max-width: 960px;
-    margin: auto;
-  }
-
-  /* Üst kart bölümü */
-  .top-section {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    align-items: center;
-  }
-  .top-image {
-    flex: 1;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(80,150,250,0.5);
-  }
-  .top-image img {
-    width: 100%;
-    display: block;
-    height: auto;
-    object-fit: cover;
-  }
-  .top-text {
-    flex: 1;
-    background-color: #222;
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
-  }
-  .top-text code {
-    color: #50fa7b;
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-  .top-text h1 {
-    font-size: 2.2rem;
-    margin: 0.5rem 0 1rem 0;
-    color: #fff;
-  }
-  .top-text p {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-  .top-text strong {
-    color: #f8f8f2;
-  }
-  .top-text .buttons {
-    margin-top: 1.5rem;
-  }
-  .btn {
-    display: inline-block;
-    background: transparent;
-    border: 1.5px solid #50fa7b;
-    color: #50fa7b;
-    border-radius: 20px;
-    padding: 0.4rem 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-right: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-  }
-  .btn:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
-
-  /* Alt about kısmı */
-  .about-section {
-    background-color: #222;
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
-    display: flex;
-    gap: 2rem;
-    color: #bbb;
-    margin-bottom: 3rem;
-  }
-  .about-text {
-    flex: 2;
-  }
-  .about-text h2 {
-    color: #50fa7b;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .about-text p {
-    margin-bottom: 1rem;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1rem;
-  }
-  .tag {
-    background-color: #444;
-    color: #50fa7b;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-  .tag svg {
-    fill: #50fa7b;
-    width: 16px;
-    height: 16px;
-  }
-  .about-image {
-    flex: 1;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(80,250,123,0.2);
-  }
-  .about-image img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 16px;
-  }
-
-  /* Projeler ve iletişim bölümleri */
-  .projects-section, .contact-section {
-    background-color: #222;
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
-    color: #bbb;
-    margin-bottom: 3rem;
-  }
-  .projects-section h2, .contact-section h2 {
-    color: #50fa7b;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .project-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  .project-list li {
-    background-color: #333;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
-  }
-  .project-list li:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
-  .project-list a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .project-list a:hover {
-    text-decoration: underline;
-  }
-  .contact-list {
-    list-style: none;
-    padding-left: 0;
-  }
-  .contact-list li {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-  }
-  .contact-list a {
-    color: #61dafb;
-    text-decoration: none;
-  }
-  .contact-list a:hover {
-    text-decoration: underline;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .top-section, .about-section {
-      flex-direction: column;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berkay ILIKOBA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      line-height: 1.6;
+      padding: 2rem;
     }
-    .top-text, .top-image, .about-text, .about-image {
-      width: 100%;
+    h1, h2 { color: #00bcd4; }
+    nav {
+      margin-bottom: 2rem;
     }
-    .top-image {
-      height: 250px;
+    nav a {
+      color: #f0f0f0;
+      margin-right: 1rem;
+      text-decoration: none;
     }
-    .about-image {
-      height: 200px;
+    section { margin-bottom: 3rem; }
+    .project, .blog-post {
+      border: 1px solid #333;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
     }
-  }
-</style>
+    footer {
+      margin-top: 4rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Berkay ILIKOBA</h1>
+    <p>Bilgisayar Mühendisi | Yapay Zeka | Görüntü İşleme | ROS | Teknofest Takım Kaptanı</p>
+  </header>
 
-<div class="container">
+  <nav>
+    <a href="#about">Hakkımda</a>
+    <a href="#projects">Projeler</a>
+    <a href="#blog">Blog</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">İletişim</a>
+  </nav>
 
-  <!-- Üst Kart -->
-  <div class="top-section">
-    <div class="top-image">
-      <img src="https://avatars.githubusercontent.com/u/104388746?v=4" alt="Berkay ILIKOBA Profil" />
-    </div>
-    <div class="top-text">
-      <code>&lt;code&gt;I build <strong>automation, image processing & machine learning tools</strong>&lt;/code&gt;</code>
-      <h1>Berkay ILIKOBA</h1>
-      <p>Bilgisayar Mühendisliği 1. sınıf öğrencisi, Python ve görüntü işleme & makine öğrenmesi odaklı geliştirici. <strong>Teknofest Savaşan İHA Takımı</strong> kaptanıyım.</p>
-      <p>Boş zamanlarımda <strong>robotik</strong>, <strong>yapay zeka</strong>, <strong>görüntü işleme</strong> ve <strong>yazılım geliştirme</strong> ile ilgileniyorum.</p>
-      <div class="buttons">
-        <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener" class="btn">GitHub</a>
-        <a href="mailto:ilikobaberkay@gmail.com" class="btn">İletişim</a>
-      </div>
-    </div>
-  </div>
+  <section id="about">
+    <h2>Hakkımda</h2>
+    <p>Merhaba, ben Berkay. Çukurova Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Görüntü işleme, gömülü sistemler ve yapay zeka ile ilgileniyorum. Aynı zamanda Teknofest Savaşan İHA takımında yazılım takım kaptanıyım.</p>
+  </section>
 
-  <!-- About Bölümü -->
-  <div class="about-section">
-    <div class="about-text">
-      <h2>Hakkımda</h2>
-      <p>Bilgisayar mühendisliği 1. sınıf öğrencisiyim ve yaklaşık 10 yıldır programlamayla iç içeyim. Python'da iyi seviyedeyim ve görüntü işleme ile makine öğrenmesi alanlarında çeşitli giriş ve orta seviye projeler geliştirdim.</p>
-      <p>Teknofest Savaşan İHA takım kaptanı olarak hem teknik bilgi hem de liderlik becerilerimi geliştiriyorum. Amacım akademisyenlik ve yazılım alanında derinleşmek.</p>
-      <div class="tags">
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Yaş: 21</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> İlgi Alanları: Görüntü İşleme, Robotik, Makine Öğrenmesi, Bilgisayarlı Görü</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Eğitim: Çukurova Üniversitesi</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Konum: Adana, Türkiye</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Takım: Huawei Student Developers</div>
-      </div>
-    </div>
-    <div class="about-image">
-      <img src="https://avatars.githubusercontent.com/u/104388746?v=4" alt="Berkay ILIKOBA" />
-    </div>
-  </div>
-
-  <!-- Projeler Bölümü -->
-  <div class="projects-section">
+  <section id="projects">
     <h2>Projeler</h2>
-    <ul class="project-list">
-      <li><a href="https://github.com/berkayilikoba/MNIST-CNN-Classifier" target="_blank" rel="noopener">MNIST CNN Classifier</a> - Keras kullanarak el yazısı rakamları sınıflandıran konvolüsyonel sinir ağı projesi.</li>
-      <li><a href="https://github.com/berkayilikoba/Real-Time-Hand-Gesture-Recognition-and-RGB-LED-Control-using-OpenCV-MediaPipe-and-Arduino" target="_blank" rel="noopener">El Hareketleri Tanımlama ve LED Kontrolü</a> - Mediapipe ile el hareketlerini tanımlama ve Arduino ile led kontrolü.</li>
-      <li><a href="https://github.com/berkayilikoba/ROS-Underwater-Robot" target="_blank" rel="noopener">ROS Underwater Robot</a> - ROS ve Gazebo kullanarak su altı aracı simülasyonu ve kontrolü.</li>
-    </ul>
-  </div>
+    <div class="project">
+      <h3>MNIST-CNN-Classifier</h3>
+      <p>El yazısı rakamları tanımak için CNN mimarisi kullandığım bir proje.</p>
+      <a href="https://github.com/berkayilikoba/MNIST-CNN-Classifier" target="_blank">GitHub</a>
+    </div>
+    <div class="project">
+      <h3>RGB LED Renk Algılama</h3>
+      <p>Arduino ile kamera verisi üzerinden RGB LED kontrol projesi.</p>
+    </div>
+    <div class="project">
+      <h3>ROS + Pixhawk Su Altı Aracı</h3>
+      <p>ROS ile kontrol edilen, kırmızı nesne algılayınca hızlanan otonom su altı aracı.</p>
+    </div>
+  </section>
 
-  <!-- İletişim Bölümü -->
-  <div class="contact-section">
+  <section id="blog">
+    <h2>Blog Yazılarım</h2>
+    <div class="blog-post">
+      <h3>Data Augmentation Nedir?</h3>
+      <p>Veri artırma nedir, neden yapılır ve nasıl uygulanır örneklerle anlatıyorum.</p>
+      <a href="#">Yazıyı Oku</a>
+    </div>
+    <div class="blog-post">
+      <h3>Raspberry Pi ile Pixhawk Entegrasyonu</h3>
+      <p>ROS ile Pixhawk nasıl bağlanır, gerçek zamanlı kamera kontrolü nasıl yapılır?</p>
+      <a href="#">Yazıyı Oku</a>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+    <p><a href="cv/berkay_ilikoba_cv.pdf" target="_blank">CV'mi buradan indirebilirsiniz</a></p>
+  </section>
+
+  <section id="contact">
     <h2>İletişim</h2>
-    <ul class="contact-list">
-      <li>Email: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener">github.com/berkayilikoba</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/berkay-ilikoba" target="_blank" rel="noopener">linkedin.com/in/berkay-ilikoba</a></li>
-      
-    </ul>
-  </div>
+    <p>Mail: berkay@example.com</p>
+    <p><a href="https://github.com/berkayilikoba" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/berkayilikoba" target="_blank">LinkedIn</a> | <a href="https://medium.com/@berkayilikoba" target="_blank">Medium</a></p>
+  </section>
 
-</div>
-
+  <footer>
+    <p>&copy; 2025 Berkay ILIKOBA. Tüm hakları saklıdır.</p>
+  </footer>
 </body>
 </html>
