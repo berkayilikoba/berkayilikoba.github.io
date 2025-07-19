@@ -31,16 +31,18 @@
     align-items: center;
   }
   .top-image {
-    flex: 1;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(80,150,250,0.5);
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(80,150,250,0.5);
+  max-height: 350px;       /* Maksimum yükseklik */
   }
+
   .top-image img {
     width: 100%;
+    height: 100%;           /* Kapsayıcı yüksekliğini kapla */
+    object-fit: cover;      /* Taşmayı kırparak kapla */
     display: block;
-    height: auto;
-    object-fit: cover;
   }
 
   .top-text {
