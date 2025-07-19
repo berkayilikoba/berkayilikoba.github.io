@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<link rel="icon" type="image/x-icon" href="/images/favicon1.ico">
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Berkay ILIKOBA</title>
+<link rel="icon" type="image/x-icon" href="images/favicon1.ico" />
+
+
 <style>
   body {
     background-color: #121212;
@@ -32,20 +35,18 @@
     align-items: center;
   }
   .top-image {
-  flex: 1;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(80,150,250,0.5);
-  max-height: 350px;       /* Maksimum yükseklik */
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(80,150,250,0.5);
+    max-height: 350px;
   }
-
   .top-image img {
     width: 100%;
-    height: 100%;           /* Kapsayıcı yüksekliğini kapla */
-    object-fit: cover;      /* Taşmayı kırparak kapla */
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
-
   .top-text {
     flex: 1;
     background-color: #222;
@@ -148,7 +149,6 @@
     border-radius: 16px;
   }
 
-  /* Projeler ve iletişim bölümleri */
   .projects-section, .contact-section {
     background-color: #222;
     padding: 2rem 2.5rem;
@@ -200,7 +200,6 @@
     text-decoration: underline;
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .top-section, .about-section {
       flex-direction: column;
@@ -218,9 +217,7 @@
 </style>
 </head>
 <body>
-
 <div class="container">
-
   <!-- Üst Kart -->
   <div class="top-section">
     <div class="top-image">
@@ -230,17 +227,15 @@
       <code>&lt;code&gt;I build <strong>computer vision, image processing & machine learning tools</strong>&lt;/code&gt;</code>
       <h1>Berkay ILIKOBA</h1>
       <p>Bilgisayar Mühendisliği 2. sınıf öğrencisi, Python ve görüntü işleme & makine öğrenmesi odaklı geliştirici. <strong>Teknofest Savaşan İHA Takımı</strong> kaptanıyım.</p>
-      
       <div class="buttons">
         <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener" class="btn">GitHub</a>
-        
         <a href="https://www.linkedin.com/in/berkay-ilikoba/" class="btn">LinkedIn</a>
         <a href="mailto:ilikobaberkay@gmail.com" class="btn">Mail</a>
       </div>
     </div>
   </div>
 
-  <!-- About Bölümü -->
+  <!-- About -->
   <div class="about-section">
     <div class="about-text">
       <h2>Hakkımda</h2>
@@ -254,10 +249,9 @@
         <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Takım: Huawei Student Developers</div>
       </div>
     </div>
-    
   </div>
 
-  <!-- Projeler Bölümü -->
+  <!-- Projeler -->
   <div class="projects-section">
     <h2>Projeler</h2>
     <ul class="project-list">
@@ -266,43 +260,35 @@
       <li><a href="https://github.com/berkayilikoba/CIFAR10-CNN-Classifier" target="_blank" rel="noopener">CIFAR10 CNN Classifier</a> - Keras kullanarak CIFAR10 veri seti sınıflandırması ve optimizasyonu.</li>
     </ul>
   </div>
-    <!-- Teknik Yetenekler Bölümü -->
+
+  <!-- Teknik Yetenekler -->
   <div class="skills-section" style="background-color: #222; padding: 2rem 2.5rem; border-radius: 20px; color: #bbb; margin-bottom: 3rem;">
     <h2 style="color: #50fa7b; font-weight: 700; margin-bottom: 1rem;">Teknik Yetenekler</h2>
     <ul style="list-style: none; padding-left: 0; margin: 0;">
       <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem;">
-        <span style="min-width: 120px;">Python</span>
-        <span class="skill-rating">★★★★☆</span>
+        <span style="min-width: 120px;">Python</span> <span class="skill-rating">★★★★☆</span>
       </li>
       <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem;">
-        <span style="min-width: 120px;">C++</span>
-        <span class="skill-rating">★★★☆☆</span>
+        <span style="min-width: 120px;">C++</span> <span class="skill-rating">★★★☆☆</span>
       </li>
       <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem;">
-        <span style="min-width: 120px;">Keras</span>
-        <span class="skill-rating">★★★☆☆</span>
+        <span style="min-width: 120px;">Keras</span> <span class="skill-rating">★★★☆☆</span>
       </li>
       <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem;">
-        <span style="min-width: 120px;">OpenCV</span>
-        <span class="skill-rating">★★★☆☆</span>
+        <span style="min-width: 120px;">OpenCV</span> <span class="skill-rating">★★★☆☆</span>
       </li>
       <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem;">
-        <span style="min-width: 120px;">Machine Learning</span>
-        <span class="skill-rating">★★★☆☆</span>
+        <span style="min-width: 120px;">Machine Learning</span> <span class="skill-rating">★★★☆☆</span>
       </li>
       <li style="margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem;">
-        <span style="min-width: 120px;">Computer Vision</span>
-        <span class="skill-rating">★★★★☆</span>
+        <span style="min-width: 120px;">Computer Vision</span> <span class="skill-rating">★★★★☆</span>
       </li>
-      
-      
     </ul>
   </div>
-
   <style>
     .skill-rating {
       font-size: 1.2rem;
-      color: #50fa7b; /* yeşil yıldız rengi */
+      color: #50fa7b;
       letter-spacing: 2px;
       user-select: none;
     }
@@ -315,28 +301,22 @@
     }
   </style>
 
-  <!-- CV Bölümü -->
+  <!-- CV -->
   <div class="cv-section" style="background-color: #222; padding: 2rem 2.5rem; border-radius: 20px; color: #bbb; margin-bottom: 3rem;">
     <h2 style="color: #50fa7b; font-weight: 700; margin-bottom: 1rem;">Özgeçmiş (CV)</h2>
     <p>Bilgisayar Mühendisliği 2. sınıf öğrencisi olarak eğitim, projeler ve teknik becerilerimi içeren güncel CV'mi aşağıdaki linkten indirebilirsiniz.</p>
-    <a href="files/Berkay ILIKOBA CV.pdf" target="_blank" rel="noopener" 
-       style="display: inline-block; background: transparent; border: 1.5px solid #50fa7b; color: #50fa7b; border-radius: 20px; padding: 0.5rem 1.5rem; font-weight: 600; text-decoration: none; transition: background-color 0.3s ease, color 0.3s ease;">
-      CV İndir
-    </a>
+    <a href="files/Berkay ILIKOBA CV.pdf" target="_blank" rel="noopener" style="display: inline-block; background: transparent; border: 1.5px solid #50fa7b; color: #50fa7b; border-radius: 20px; padding: 0.5rem 1.5rem; font-weight: 600; text-decoration: none; transition: background-color 0.3s ease, color 0.3s ease;">CV İndir</a>
   </div>
 
-  <!-- İletişim Bölümü -->
+  <!-- İletişim -->
   <div class="contact-section">
     <h2>İletişim</h2>
     <ul class="contact-list">
       <li>Email: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></li>
       <li>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener">github.com/berkayilikoba</a></li>
       <li>LinkedIn: <a href="https://linkedin.com/in/berkay-ilikoba" target="_blank" rel="noopener">linkedin.com/in/berkay-ilikoba</a></li>
-      
     </ul>
   </div>
-
 </div>
-
 </body>
 </html>
