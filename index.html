@@ -3,201 +3,211 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Berkay ILIKOBA</title>
+<title>Profil Örneği</title>
 <style>
-  /* Reset */
-  *, *::before, *::after {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
   body {
     background-color: #121212;
-    color: #e0e0e0;
+    color: #ddd;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
+    margin: 2rem;
   }
-  header {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  header h1 {
-    font-weight: 700;
-    font-size: 3rem;
-    letter-spacing: 2px;
-    margin-bottom: 0.2rem;
-  }
-  header p {
-    font-weight: 300;
-    color: #a0a0a0;
-    font-size: 1.2rem;
-  }
-  nav {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1rem;
-    justify-content: center;
-  }
-  nav a {
-    color: #bbbbbb;
-    font-weight: 600;
-    font-size: 1rem;
+  a {
+    color: #61dafb;
     text-decoration: none;
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-    transition: color 0.3s ease;
   }
-  nav a:hover, nav a:focus {
-    color: #61dafb;
-    outline: none;
+  a:hover {
+    text-decoration: underline;
   }
-  main {
-    max-width: 700px;
-    width: 100%;
-  }
-  section {
-    margin-bottom: 3rem;
-  }
-  section h2 {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #61dafb;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #61dafb;
-    padding-bottom: 0.3rem;
-  }
-  p, dd {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    color: #ccc;
-  }
-  ul {
-    list-style: none;
-  }
-  ul li {
-    background-color: #1e1e1e;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 8px;
-    cursor: default;
-    transition: background-color 0.3s ease;
-  }
-  ul li:hover, ul li:focus {
-    background-color: #282828;
-    outline: none;
-  }
-  ul li strong {
-    display: block;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-  }
-  footer {
-    text-align: center;
-    color: #666666;
-    font-size: 0.9rem;
-    margin-top: auto;
-  }
-  /* Profil kısmı için dl düzeni */
-  dl {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    row-gap: 0.9rem;
-    column-gap: 1.5rem;
-    color: #ccc;
-    font-size: 1.05rem;
-  }
-  dt {
-    font-weight: 700;
-    color: #8ac6ff;
-  }
-  dd {
-    margin-left: 0;
+  .container {
+    max-width: 960px;
+    margin: auto;
   }
 
-  @media (max-width: 600px) {
-    nav {
+  /* Üst kart bölümü */
+  .top-section {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: center;
+  }
+  .top-image {
+    flex: 1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,255,0,0.2);
+  }
+  .top-image img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+  }
+  .top-text {
+    flex: 1;
+    background-color: #222;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
+  }
+  .top-text code {
+    color: #50fa7b;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .top-text h1 {
+    font-size: 2.2rem;
+    margin: 0.5rem 0 1rem 0;
+    color: #fff;
+  }
+  .top-text p {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+  .top-text strong {
+    color: #f8f8f2;
+  }
+  .top-text a.social {
+    margin-right: 10px;
+    color: #61dafb;
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+  .top-text .buttons {
+    margin-top: 1.5rem;
+  }
+  .btn {
+    display: inline-block;
+    background: transparent;
+    border: 1.5px solid #50fa7b;
+    color: #50fa7b;
+    border-radius: 20px;
+    padding: 0.4rem 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+  }
+  .btn:hover {
+    background-color: #50fa7b;
+    color: #121212;
+  }
+
+  /* Alt about kısmı */
+  .about-section {
+    background-color: #222;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    display: flex;
+    gap: 2rem;
+    color: #bbb;
+  }
+  .about-text {
+    flex: 2;
+  }
+  .about-text h2 {
+    color: #50fa7b;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .about-text p {
+    margin-bottom: 1rem;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+  }
+  .tag {
+    background-color: #444;
+    color: #50fa7b;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .tag svg {
+    fill: #50fa7b;
+    width: 16px;
+    height: 16px;
+  }
+  .about-image {
+    flex: 1;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(80,250,123,0.2);
+  }
+  .about-image img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .top-section, .about-section {
       flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+    }
+    .top-text, .top-image, .about-text, .about-image {
+      width: 100%;
+    }
+    .top-image {
+      height: 250px;
+    }
+    .about-image {
+      height: 200px;
     }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Berkay ILIKOBA</h1>
-  <p>Çukurova Üniversitesi Bilgisayar Mühendisliği 2. Sınıf Öğrencisi</p>
-  <nav>
-    <a href="#about">Hakkımda</a>
-    <a href="#profile">Profil</a>
-    <a href="#projects">Projeler</a>
-    <a href="#contact">İletişim</a>
-  </nav>
-</header>
+<div class="container">
 
-<main>
-  <section id="about" tabindex="0">
-    <h2>Hakkımda</h2>
-    <p>Merhaba! Ben Berkay ILIKOBA. Yapay zeka, bilgisayarla görme ve gömülü sistemler üzerine çalışıyorum. Python, TensorFlow, OpenCV gibi kütüphanelerle projeler geliştiriyorum.</p>
-  </section>
+  <!-- Üst Kart -->
+  <div class="top-section">
+    <div class="top-image">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Profil Görseli" />
+    </div>
+    <div class="top-text">
+      <code>&lt;code&gt;I build <strong>automation tools</strong>&lt;/code&gt;</code>
+      <h1>Tim Baker</h1>
+      <p>I'm a Victoria based <strong>Full Stack Software Engineer</strong>, currently working at <strong>Instant Domains</strong> helping build a modern, mobile-first, domain registrar and site builder.</p>
+      <p>In my free time, you can catch me training in <strong>Muay Thai</strong>, plucking my <strong>banjo</strong>, or exploring beautiful <em>Vancouver Island</em>.</p>
+      <div class="buttons">
+        <a href="#" class="btn">Resume</a>
+        <a href="#" class="btn">Contact</a>
+      </div>
+    </div>
+  </div>
 
-  <section id="profile" tabindex="0" style="background: #1e1e1e; padding: 1.5rem; border-radius: 10px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); margin-bottom: 3rem;">
-    <h2>Profil</h2>
-    <dl>
-      <dt>Location:</dt>
-      <dd>Victoria, BC</dd>
+  <!-- Alt About Bölümü -->
+  <div class="about-section">
+    <div class="about-text">
+      <h2>About me</h2>
+      <p>I am an athlete at heart with an entrepreneurial spirit, a knack for online security, and a passion for coding. Born in a small town in Northern BC, I made my move to Victoria where I work as a full stack developer for Instant Domains, alongside my many ongoing projects.</p>
+      <p>Outside of work I am an avid motorcyclist, soccer player and Muay Thai fighter. I love to travel and lead a fairly nomadic lifestyle. I built much of my early portfolio from beaches of Southeast Asia and dream of taking my work with me while traveling the world.</p>
+      <div class="tags">
+        <div class="tag"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg> Location: Victoria, BC</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg> Age: 29</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg> Nationality: Canadian / Irish</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg> Interests: Motorcycles, Muay Thai, Banjos</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg> Study: University of Victoria</div>
+        <div class="tag"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/></svg> Employment: Instant Domains, inc.</div>
+      </div>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Profil küçük resim" />
+    </div>
+  </div>
 
-      <dt>Age:</dt>
-      <dd>29</dd>
-
-      <dt>Nationality:</dt>
-      <dd>Canadian / Irish</dd>
-
-      <dt>Interests:</dt>
-      <dd>Motorcycles, Muay Thai, Banjos</dd>
-
-      <dt>Study:</dt>
-      <dd>University of Victoria</dd>
-
-      <dt>Employment:</dt>
-      <dd>Instant Domains, inc.</dd>
-    </dl>
-  </section>
-
-  <section id="projects" tabindex="0">
-    <h2>Projeler</h2>
-    <ul>
-      <li tabindex="0">
-        <strong>MNIST El Yazısı Tanıma</strong>
-        Python ve TensorFlow kullanarak geliştirdiğim derin öğrenme projesi.
-      </li>
-      <li tabindex="0">
-        <strong>Gerçek Zamanlı Görüntü İşleme</strong>
-        OpenCV ile renk algılama ve nesne takibi projeleri.
-      </li>
-      <li tabindex="0">
-        <strong>Teknofest Savaşan İHA</strong>
-        Takım kaptanı olarak görev aldığım insansız hava aracı projesi.
-      </li>
-    </ul>
-  </section>
-
-  <section id="contact" tabindex="0">
-    <h2>İletişim</h2>
-    <p>E-posta: <a href="mailto:ilikobaberkay@gmail.com" style="color:#61dafb;">ilikobaberkay@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener noreferrer" style="color:#61dafb;">github.com/berkayilikoba</a></p>
-  </section>
-</main>
-
-<footer>
-  © 2025 Berkay ILIKOBA - Tüm Hakları Saklıdır.
-</footer>
+</div>
 
 </body>
 </html>
