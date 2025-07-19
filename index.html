@@ -14,8 +14,8 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #121212;
-      color: #e0e0e0;
+      background: #1e1e1e;
+      color: #f0e6db;
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
@@ -23,11 +23,11 @@
     }
 
     header {
-      background-color: #008080;
-      color: #e0f2f1;
+      background-color: #d84315; /* koyu turuncu-kırmızı */
+      color: #ffccbc;
       padding: 1.5rem 2rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0, 128, 128, 0.7);
+      box-shadow: 0 2px 8px rgba(216, 67, 21, 0.8);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -45,7 +45,7 @@
     }
 
     nav a {
-      color: #b2dfdb;
+      color: #ffab91;
       text-decoration: none;
       margin: 0 18px;
       font-weight: 700;
@@ -57,8 +57,8 @@
 
     nav a:hover,
     nav a:focus {
-      background-color: #004d4d;
-      color: #a7ffeb;
+      background-color: #bf360c;
+      color: #ffccbc;
       outline: none;
     }
 
@@ -70,24 +70,24 @@
     }
 
     section {
-      background: #1e272e;
+      background: #3e2723; /* koyu kahverengimsi kırmızı */
       padding: 2.4rem 2rem;
       margin-bottom: 2rem;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0, 128, 128, 0.4);
+      box-shadow: 0 6px 15px rgba(216, 67, 21, 0.6);
       transition: transform 0.3s ease;
       cursor: default;
     }
 
     section:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 150, 150, 0.6);
+      box-shadow: 0 10px 25px rgba(255, 87, 34, 0.7);
     }
 
     section h2 {
       margin-bottom: 1.2rem;
-      color: #26a69a;
-      border-bottom: 3px solid #004d4d;
+      color: #ff7043;
+      border-bottom: 3px solid #bf360c;
       padding-bottom: 0.8rem;
       user-select: none;
     }
@@ -104,36 +104,37 @@
     }
 
     ul li {
-      background-color: #004d4d;
+      background-color: #bf360c;
       margin-bottom: 12px;
       padding: 12px 18px;
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      color: #ffccbc;
     }
 
     ul li:hover {
-      background-color: #26a69a;
-      color: #121212;
+      background-color: #ff7043;
+      color: #3e2723;
     }
 
     a {
-      color: #4db6ac;
+      color: #ffab91;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     a:hover,
     a:focus {
-      color: #80cbc4;
+      color: #ffccbc;
       outline: none;
       text-decoration: underline;
     }
 
     footer {
-      background-color: #004d4d;
-      color: #a7ffeb;
+      background-color: #bf360c;
+      color: #ffccbc;
       text-align: center;
       padding: 1.3rem;
       font-size: 0.95rem;
@@ -151,7 +152,7 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(18,18,18,0.85);
+      background-color: rgba(30, 30, 30, 0.95);
       backdrop-filter: blur(5px);
       align-items: center;
       justify-content: center;
@@ -159,13 +160,13 @@
     }
 
     .modal-content {
-      background-color: #263238;
+      background-color: #4e342e;
       padding: 2rem 2.5rem;
       border-radius: 15px;
       max-width: 600px;
       width: 90%;
-      box-shadow: 0 8px 20px rgba(38,50,56,0.8);
-      color: #cfd8dc;
+      box-shadow: 0 8px 20px rgba(78, 52, 46, 0.85);
+      color: #ffccbc;
       position: relative;
       user-select: text;
       font-size: 1rem;
@@ -174,7 +175,7 @@
 
     .modal-content h3 {
       margin-top: 0;
-      color: #80cbc4;
+      color: #ff8a65;
       user-select: none;
     }
 
@@ -184,14 +185,14 @@
       right: 18px;
       font-size: 1.8rem;
       font-weight: 700;
-      color: #80cbc4;
+      color: #ffab91;
       cursor: pointer;
       transition: color 0.3s ease;
       user-select: none;
     }
 
     .close-btn:hover {
-      color: #b2dfdb;
+      color: #ffccbc;
     }
 
     /* Responsive */
@@ -205,7 +206,6 @@
         padding: 1.8rem 1.5rem;
       }
     }
-
   </style>
 </head>
 <body>
