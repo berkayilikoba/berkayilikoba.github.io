@@ -1,106 +1,133 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Berkay ILIKOBA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-      line-height: 1.6;
-      padding: 2rem;
-    }
-    h1, h2 { color: #00bcd4; }
-    nav {
-      margin-bottom: 2rem;
-    }
-    nav a {
-      color: #f0f0f0;
-      margin-right: 1rem;
-      text-decoration: none;
-    }
-    section { margin-bottom: 3rem; }
-    .project, .blog-post {
-      border: 1px solid #333;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-    }
-    footer {
-      margin-top: 4rem;
-      text-align: center;
-      color: #888;
-      font-size: 0.9rem;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Berkay ILIKOBA</title>
+<link rel="icon" href="https://avatars.githubusercontent.com/u/104388746?v=4" type="image/png">
+<style>
+  body {
+    background-color: #121212;
+    color: #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2rem;
+  }
+  a {
+    color: #61dafb;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .container {
+    max-width: 960px;
+    margin: auto;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  header h1 {
+    font-size: 2.5rem;
+    color: #50fa7b;
+    margin-bottom: 0.5rem;
+  }
+  header p {
+    color: #aaa;
+    font-size: 1.1rem;
+  }
+  nav {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  nav a {
+    margin: 0 1rem;
+    font-weight: 600;
+  }
+  footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Berkay ILIKOBA</h1>
-    <p>Bilgisayar Mühendisi | Yapay Zeka | Görüntü İşleme | ROS | Teknofest Takım Kaptanı</p>
-  </header>
 
-  <nav>
-    <a href="#about">Hakkımda</a>
-    <a href="#projects">Projeler</a>
-    <a href="#blog">Blog</a>
-    <a href="#cv">CV</a>
-    <a href="#contact">İletişim</a>
-  </nav>
+<header>
+  <h1>Berkay ILIKOBA</h1>
+  <p>Yapay Zeka | Görüntü İşleme | Gömülü Sistemler | Takım Kaptanı</p>
+</header>
 
-  <section id="about">
-    <h2>Hakkımda</h2>
-    <p>Merhaba, ben Berkay. Çukurova Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Görüntü işleme, gömülü sistemler ve yapay zeka ile ilgileniyorum. Aynı zamanda Teknofest Savaşan İHA takımında yazılım takım kaptanıyım.</p>
-  </section>
+<nav>
+  <a href="#about">Hakkımda</a>
+  <a href="#projects">Projeler</a>
+  <a href="#contact">İletişim</a>
+</nav>
 
-  <section id="projects">
+<div class="container">
+  <!-- Üst Kart -->
+  <div class="top-section">
+    <div class="top-image">
+      <img src="https://avatars.githubusercontent.com/u/104388746?v=4" alt="Berkay ILIKOBA Profil" />
+    </div>
+    <div class="top-text">
+      <code>&lt;code&gt;I build <strong>automation, image processing & machine learning tools</strong>&lt;/code&gt;</code>
+      <h1>Berkay ILIKOBA</h1>
+      <p>Bilgisayar Mühendisliği 1. sınıf öğrencisi, Python ve görüntü işleme & makine öğrenmesi odaklı geliştirici. <strong>Teknofest Savaşan İHA Takımı</strong> kaptanıyım.</p>
+      <p>Boş zamanlarımda <strong>robotik</strong>, <strong>yapay zeka</strong>, <strong>görüntü işleme</strong> ve <strong>yazılım geliştirme</strong> ile ilgileniyorum.</p>
+      <div class="buttons">
+        <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener" class="btn">GitHub</a>
+        <a href="mailto:ilikobaberkay@gmail.com" class="btn">İletişim</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Bölümü -->
+  <div class="about-section" id="about">
+    <div class="about-text">
+      <h2>Hakkımda</h2>
+      <p>Bilgisayar mühendisliği 1. sınıf öğrencisiyim ve yaklaşık 10 yıldır programlamayla iç içeyim. Python'da iyi seviyedeyim ve görüntü işleme ile makine öğrenmesi alanlarında çeşitli giriş ve orta seviye projeler geliştirdim.</p>
+      <p>Teknofest Savaşan İHA takım kaptanı olarak hem teknik bilgi hem de liderlik becerilerimi geliştiriyorum. Amacım akademisyenlik ve yazılım alanında derinleşmek.</p>
+      <div class="tags">
+        <div class="tag">Yaş: 21</div>
+        <div class="tag">İlgi Alanları: Görüntü İşleme, Robotik, Makine Öğrenmesi, Bilgisayarlı Görü</div>
+        <div class="tag">Eğitim: Çukurova Üniversitesi</div>
+        <div class="tag">Konum: Adana, Türkiye</div>
+        <div class="tag">Takım: Huawei Student Developers</div>
+      </div>
+    </div>
+    <div class="about-image">
+      <img src="https://avatars.githubusercontent.com/u/104388746?v=4" alt="Berkay ILIKOBA" />
+    </div>
+  </div>
+
+  <!-- Projeler Bölümü -->
+  <div class="projects-section" id="projects">
     <h2>Projeler</h2>
-    <div class="project">
-      <h3>MNIST-CNN-Classifier</h3>
-      <p>El yazısı rakamları tanımak için CNN mimarisi kullandığım bir proje.</p>
-      <a href="https://github.com/berkayilikoba/MNIST-CNN-Classifier" target="_blank">GitHub</a>
-    </div>
-    <div class="project">
-      <h3>RGB LED Renk Algılama</h3>
-      <p>Arduino ile kamera verisi üzerinden RGB LED kontrol projesi.</p>
-    </div>
-    <div class="project">
-      <h3>ROS + Pixhawk Su Altı Aracı</h3>
-      <p>ROS ile kontrol edilen, kırmızı nesne algılayınca hızlanan otonom su altı aracı.</p>
-    </div>
-  </section>
+    <ul class="project-list">
+      <li><a href="https://github.com/berkayilikoba/MNIST-CNN-Classifier" target="_blank" rel="noopener">MNIST CNN Classifier</a> - Keras kullanarak el yazısı rakamları sınıflandıran konvolüsyonel sinir ağı projesi.</li>
+      <li><a href="https://github.com/berkayilikoba/Real-Time-Hand-Gesture-Recognition-and-RGB-LED-Control-using-OpenCV-MediaPipe-and-Arduino" target="_blank" rel="noopener">El Hareketleri Tanımlama ve LED Kontrolü</a> - Mediapipe ile el hareketlerini tanımlama ve Arduino ile led kontrolü.</li>
+      <li><a href="https://github.com/berkayilikoba/ROS-Underwater-Robot" target="_blank" rel="noopener">ROS Underwater Robot</a> - ROS ve Gazebo kullanarak su altı aracı simülasyonu ve kontrolü.</li>
+    </ul>
+  </div>
 
-  <section id="blog">
-    <h2>Blog Yazılarım</h2>
-    <div class="blog-post">
-      <h3>Data Augmentation Nedir?</h3>
-      <p>Veri artırma nedir, neden yapılır ve nasıl uygulanır örneklerle anlatıyorum.</p>
-      <a href="#">Yazıyı Oku</a>
-    </div>
-    <div class="blog-post">
-      <h3>Raspberry Pi ile Pixhawk Entegrasyonu</h3>
-      <p>ROS ile Pixhawk nasıl bağlanır, gerçek zamanlı kamera kontrolü nasıl yapılır?</p>
-      <a href="#">Yazıyı Oku</a>
-    </div>
-  </section>
-
-  <section id="cv">
-    <h2>CV</h2>
-    <p><a href="cv/berkay_ilikoba_cv.pdf" target="_blank">CV'mi buradan indirebilirsiniz</a></p>
-  </section>
-
-  <section id="contact">
+  <!-- İletişim Bölümü -->
+  <div class="contact-section" id="contact">
     <h2>İletişim</h2>
-    <p>Mail: berkay@example.com</p>
-    <p><a href="https://github.com/berkayilikoba" target="_blank">GitHub</a> | <a href="https://linkedin.com/in/berkayilikoba" target="_blank">LinkedIn</a> | <a href="https://medium.com/@berkayilikoba" target="_blank">Medium</a></p>
-  </section>
+    <ul class="contact-list">
+      <li>Email: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></li>
+      <li>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener">github.com/berkayilikoba</a></li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/berkay-ilikoba" target="_blank" rel="noopener">linkedin.com/in/berkay-ilikoba</a></li>
+      <li>Medium: <a href="https://medium.com/@berkayilikoba" target="_blank" rel="noopener">medium.com/@berkayilikoba</a></li>
+    </ul>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Berkay ILIKOBA. Tüm hakları saklıdır.</p>
-  </footer>
+</div>
+
+<footer>
+  <p>&copy; 2025 Berkay ILIKOBA. Tüm hakları saklıdır.</p>
+</footer>
+
 </body>
 </html>
