@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Berkay ILIKOBA</title>
@@ -14,8 +16,8 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #1e1e1e;
-      color: #f0e6db;
+      background: #121820;
+      color: #dbe9f4;
       line-height: 1.6;
       min-height: 100vh;
       display: flex;
@@ -23,11 +25,11 @@
     }
 
     header {
-      background-color: #d84315; /* koyu turuncu-kırmızı */
-      color: #ffccbc;
+      background-color: #0a3d62; /* koyu ve güven verici mavi */
+      color: #d0e6ff;
       padding: 1.5rem 2rem;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(216, 67, 21, 0.8);
+      box-shadow: 0 2px 8px rgba(10, 61, 98, 0.85);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -45,7 +47,7 @@
     }
 
     nav a {
-      color: #ffab91;
+      color: #a3c4f3;
       text-decoration: none;
       margin: 0 18px;
       font-weight: 700;
@@ -57,8 +59,8 @@
 
     nav a:hover,
     nav a:focus {
-      background-color: #bf360c;
-      color: #ffccbc;
+      background-color: #063d7f;
+      color: #c5dbff;
       outline: none;
     }
 
@@ -70,24 +72,24 @@
     }
 
     section {
-      background: #3e2723; /* koyu kahverengimsi kırmızı */
+      background: #1f2a38; /* koyu mavi-gri ton */
       padding: 2.4rem 2rem;
       margin-bottom: 2rem;
       border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(216, 67, 21, 0.6);
+      box-shadow: 0 6px 15px rgba(10, 61, 98, 0.5);
       transition: transform 0.3s ease;
       cursor: default;
     }
 
     section:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(255, 87, 34, 0.7);
+      box-shadow: 0 10px 25px rgba(20, 90, 150, 0.75);
     }
 
     section h2 {
       margin-bottom: 1.2rem;
-      color: #ff7043;
-      border-bottom: 3px solid #bf360c;
+      color: #74a9ff;
+      border-bottom: 3px solid #063d7f;
       padding-bottom: 0.8rem;
       user-select: none;
     }
@@ -104,42 +106,42 @@
     }
 
     ul li {
-      background-color: #bf360c;
+      background-color: #063d7f;
       margin-bottom: 12px;
       padding: 12px 18px;
       border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
-      color: #ffccbc;
+      color: #c5dbff;
     }
 
     ul li:hover {
-      background-color: #ff7043;
-      color: #3e2723;
+      background-color: #4a6edb;
+      color: #eef4ff;
     }
 
     a {
-      color: #ffab91;
+      color: #8bb5ff;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
     a:hover,
     a:focus {
-      color: #ffccbc;
+      color: #d0e6ff;
       outline: none;
       text-decoration: underline;
     }
 
     footer {
-      background-color: #bf360c;
-      color: #ffccbc;
+      background-color: #063d7f;
+      color: #c5dbff;
       text-align: center;
       padding: 1.3rem;
       font-size: 0.95rem;
       user-select: none;
-      box-shadow: inset 0 2px 6px rgba(0,0,0,0.3);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.4);
     }
 
     /* Modal Styles */
@@ -152,21 +154,21 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(30, 30, 30, 0.95);
-      backdrop-filter: blur(5px);
+      background-color: rgba(18,24,32,0.9);
+      backdrop-filter: blur(6px);
       align-items: center;
       justify-content: center;
       padding: 20px;
     }
 
     .modal-content {
-      background-color: #4e342e;
+      background-color: #25344a;
       padding: 2rem 2.5rem;
       border-radius: 15px;
       max-width: 600px;
       width: 90%;
-      box-shadow: 0 8px 20px rgba(78, 52, 46, 0.85);
-      color: #ffccbc;
+      box-shadow: 0 8px 20px rgba(37,52,74,0.9);
+      color: #dbe9f4;
       position: relative;
       user-select: text;
       font-size: 1rem;
@@ -175,7 +177,7 @@
 
     .modal-content h3 {
       margin-top: 0;
-      color: #ff8a65;
+      color: #8bb5ff;
       user-select: none;
     }
 
@@ -185,14 +187,14 @@
       right: 18px;
       font-size: 1.8rem;
       font-weight: 700;
-      color: #ffab91;
+      color: #8bb5ff;
       cursor: pointer;
       transition: color 0.3s ease;
       user-select: none;
     }
 
     .close-btn:hover {
-      color: #ffccbc;
+      color: #c5dbff;
     }
 
     /* Responsive */
@@ -206,6 +208,7 @@
         padding: 1.8rem 1.5rem;
       }
     }
+
   </style>
 </head>
 <body>
