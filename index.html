@@ -1,11 +1,131 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8" />
-    <title>Hoşgeldin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Berkay'ın Kişisel Sitesi</title>
+  <style>
+    /* Temel sıfırlama */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #005f73;
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-weight: 700;
+      letter-spacing: 1.2px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #e0fbfc;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #94d2bd;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    section {
+      background: #fff;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #0a9396;
+      border-bottom: 2px solid #94d2bd;
+      padding-bottom: 0.5rem;
+    }
+
+    footer {
+      background-color: #001219;
+      color: #94d2bd;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      nav a {
+        display: inline-block;
+        margin: 8px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Merhaba, benim adım Berkay!</h1>
-    <p>Bu benim GitHub Pages ile oluşturduğum ilk web sitem.</p>
+
+  <header>
+    <h1>Berkay İlikoba</h1>
+    <nav>
+      <a href="#about">Hakkımda</a>
+      <a href="#projects">Projeler</a>
+      <a href="#contact">İletişim</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>Hakkımda</h2>
+      <p>Merhaba! Ben Berkay, bilgisayar mühendisliği öğrencisiyim. Programlama, yapay zeka ve robotik üzerine çalışıyorum. Kod yazmayı, yeni teknolojileri keşfetmeyi ve projeler geliştirmeyi seviyorum.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projeler</h2>
+      <ul>
+        <li><strong>MNIST El Yazısı Tanıma</strong> - Python ve TensorFlow kullanarak geliştirdim.</li>
+        <li><strong>Gerçek Zamanlı Görüntü İşleme</strong> - OpenCV ile renk algılama ve nesne takibi.</li>
+        <li><strong>Teknofest Savaşan İHA</strong> - Takım kaptanı olarak görev aldım.</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>İletişim</h2>
+      <p>E-posta: <a href="mailto:berkay@example.com">berkay@example.com</a></p>
+      <p>GitHub: <a href="https://github.com/berkayilikoba" target="_blank">github.com/berkayilikoba</a></p>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Berkay İlikoba - Tüm Hakları Saklıdır.
+  </footer>
+
 </body>
 </html>
