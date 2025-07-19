@@ -7,6 +7,7 @@
 <title>Berkay ILIKOBA</title>
 <link rel="icon" type="image/x-icon" href="favicon1.ico" />
 
+
 <style>
   body {
     background-color: #121212;
@@ -22,12 +23,8 @@
     text-decoration: underline;
   }
   .container {
-    max-width: 1200px;
+    max-width: 960px;
     margin: auto;
-
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
   }
 
   /* Üst kart bölümü */
@@ -36,7 +33,6 @@
     gap: 2rem;
     margin-bottom: 3rem;
     align-items: center;
-    width: 100%;
   }
   .top-image {
     flex: 1;
@@ -97,36 +93,19 @@
     color: #121212;
   }
 
-  /* Alt bölümler yan yana */
-  .about-section,
-  .projects-section,
-  .medium-section,
-  .skills-description,
-  .cv-section,
-  .contact-section {
-    flex: 1 1 300px;
-    max-width: 480px;
+  /* Alt about kısmı */
+  .about-section {
     background-color: #222;
     padding: 2rem 2.5rem;
     border-radius: 20px;
+    display: flex;
+    gap: 2rem;
     color: #bbb;
-    box-sizing: border-box;
-    margin-bottom: 0;
+    margin-bottom: 3rem;
   }
-
-  /* Başlıklar */
-  .about-section h2,
-  .projects-section h2,
-  .medium-section h2,
-  .skills-description h2,
-  .cv-section h2,
-  .contact-section h2 {
-    color: #50fa7b;
-    font-weight: 700;
-    margin-bottom: 1rem;
+  .about-text {
+    flex: 2;
   }
-
-  /* About */
   .about-text h2 {
     color: #50fa7b;
     font-weight: 700;
@@ -170,11 +149,21 @@
     border-radius: 16px;
   }
 
-  /* Projeler */
+  .projects-section, .contact-section {
+    background-color: #222;
+    padding: 2rem 2.5rem;
+    border-radius: 20px;
+    color: #bbb;
+    margin-bottom: 3rem;
+  }
+  .projects-section h2, .contact-section h2 {
+    color: #50fa7b;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
   .project-list {
     list-style: none;
     padding-left: 0;
-    margin: 0;
   }
   .project-list li {
     background-color: #333;
@@ -195,66 +184,9 @@
   .project-list a:hover {
     text-decoration: underline;
   }
-
-  /* Medium Yazılar */
-  .medium-section ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  .medium-section li {
-    background-color: #333;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
-  }
-  .medium-section li:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
-  .medium-section a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .medium-section a:hover {
-    text-decoration: underline;
-  }
-
-  /* Teknik Yetenekler */
-  .skills-description p {
-    margin-bottom: 1rem;
-  }
-  .skills-description strong {
-    color: #50fa7b;
-  }
-
-  /* CV */
-  .cv-section p {
-    margin-bottom: 1rem;
-  }
-  .cv-section a {
-    display: inline-block;
-    background: transparent;
-    border: 1.5px solid #50fa7b;
-    color: #50fa7b;
-    border-radius: 20px;
-    padding: 0.5rem 1.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  .cv-section a:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
-
-  /* İletişim */
   .contact-list {
     list-style: none;
     padding-left: 0;
-    margin: 0;
   }
   .contact-list li {
     margin-bottom: 1rem;
@@ -268,15 +200,11 @@
     text-decoration: underline;
   }
 
-  /* Responsive: mobilde alt alta */
   @media (max-width: 768px) {
-    .container {
+    .top-section, .about-section {
       flex-direction: column;
     }
-    .top-section {
-      flex-direction: column;
-    }
-    .top-text, .top-image {
+    .top-text, .top-image, .about-text, .about-image {
       width: 100%;
     }
     .top-image {
@@ -333,18 +261,17 @@
       <li><a href="https://github.com/berkayilikoba/CIFAR10-CNN-Classifier" target="_blank" rel="noopener">CIFAR10 CNN Classifier</a> - Keras kullanarak CIFAR10 veri seti sınıflandırması ve optimizasyonu.</li>
     </ul>
   </div>
-
   <!-- Medium Yazılarım -->
-  <div class="medium-section">
-    <h2>Medium Yazılarım</h2>
-    <ul>
+  <div class="medium-section" style="background-color: #222; padding: 2rem 2.5rem; border-radius: 20px; color: #bbb; margin-bottom: 3rem;">
+    <h2 style="color: #50fa7b; font-weight: 700; margin-bottom: 1rem;">Medium Yazılarım</h2>
+    <ul class="project-list">
       <li><a href="https://medium.com/@ilikobaberkay/keras-ile-mnist-g%C3%B6r%C3%BCnt%C3%BC-s%C4%B1n%C4%B1fland%C4%B1rma-i%C3%A7in-yapay-sinir-a%C4%9F%C4%B1-ann-97-21-27a6058acb14" target="_blank" rel="noopener">Keras ile MNIST Görüntü Sınıflandırma için Yapay Sinir Ağı (ANN) (97.21%)</a></li>
+      
     </ul>
   </div>
 
-  <!-- Teknik Yetenekler -->
-  <div class="skills-description">
-    <h2>Teknik Yeteneklerim</h2>
+  <div class="skills-description" style="background-color: #222; padding: 2rem 2.5rem; border-radius: 20px; color: #bbb; margin-bottom: 3rem;">
+    <h2 style="color: #50fa7b; font-weight: 700; margin-bottom: 1rem;">Teknik Yeteneklerim</h2>
     <p><strong>Python:</strong> İleri düzey makine öğrenmesi ve derin öğrenme modelleri geliştirebiliyorum.</p>
     <p><strong>Keras:</strong> Derin öğrenme projelerinde güçlü model tasarımı, uygulaması ve optimizasyonu yapabiliyorum.</p>
     <p><strong>OpenCV:</strong> Karmaşık görüntü işleme ve bilgisayarlı görü uygulamaları geliştiriyorum.</p>
@@ -353,11 +280,12 @@
     <p><strong>Computer Vision:</strong> Görüntü analiz ve tanıma projelerinde deneyimliyim.</p>
   </div>
 
+
   <!-- CV -->
-  <div class="cv-section">
-    <h2>Özgeçmiş (CV)</h2>
+  <div class="cv-section" style="background-color: #222; padding: 2rem 2.5rem; border-radius: 20px; color: #bbb; margin-bottom: 3rem;">
+    <h2 style="color: #50fa7b; font-weight: 700; margin-bottom: 1rem;">Özgeçmiş (CV)</h2>
     <p>Bilgisayar Mühendisliği 2. sınıf öğrencisi olarak eğitim, projeler ve teknik becerilerimi içeren güncel CV'mi aşağıdaki linkten indirebilirsiniz.</p>
-    <a href="files/Berkay ILIKOBA CV.pdf" target="_blank" rel="noopener">CV İndir</a>
+    <a href="files/Berkay ILIKOBA CV.pdf" target="_blank" rel="noopener" style="display: inline-block; background: transparent; border: 1.5px solid #50fa7b; color: #50fa7b; border-radius: 20px; padding: 0.5rem 1.5rem; font-weight: 600; text-decoration: none; transition: background-color 0.3s ease, color 0.3s ease;">CV İndir</a>
   </div>
 
   <!-- İletişim -->
