@@ -1202,11 +1202,19 @@ function createHeartParticles(){
 /* =========================================================
    HEDİYEYE TIKLAMA
 ========================================================= */
-let opened=false;
+/* =========================================================
+   HEDİYEYE TIKLAMA / DOKUNMA (MOBİL DESTEKLİ)
+========================================================= */
+let opened = false;
 
-gift.addEventListener('click', ()=>{
-  if(opened) return;
-  opened=true;
+function openGift(e) {
+  if (opened) return;
+  opened = true;
+
+  // Telefonda hem dokunma hem tıklama aynı anda tetiklenirse diye birini engelliyoruz
+  if (e && e.type === 'touchstart') {
+    e.preventDefault();
+  }
 
   // 1. Kutu Açılıyor
   gift.classList.add('open');
@@ -1241,7 +1249,11 @@ gift.addEventListener('click', ()=>{
   setTimeout(()=>{
     noteCard.classList.add('visible');
   }, 4200);
-});
+}
+
+// Hem fareyle tıklamayı hem de telefondan dokunmayı dinliyoruz
+gift.addEventListener('click', openGift);
+gift.addEventListener('touchstart', openGift, { passive: false });
 
 </script>
 
