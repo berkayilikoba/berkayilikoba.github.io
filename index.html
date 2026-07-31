@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>seni sevom</title>
+<title>ss</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@ body{
   padding:0;
   width:100%;
   height:100%;
-  overflow:hidden; /* Kaydırma çubuğunu tamamen engeller */
+  overflow:hidden;
 }
 
 body{
@@ -101,16 +101,12 @@ body{
   position:relative;
   width:100%;
   text-align:center;
-  margin-top:min(35px, 5vh); /* Küçük ekranlarda yukarıya daha yakın olsun */
-
+  margin-top:min(35px, 5vh);
   opacity:0;
   transform:translateY(-15px);
-
-  transition:
-    opacity 1s ease,
-    transform 1s ease;
-
+  transition:opacity 1s ease, transform 1s ease;
   z-index:5;
+  pointer-events:none; /* Görünmez kutusu tıklamayı engellemesin */
 }
 
 .title-wrap.visible{
@@ -136,7 +132,7 @@ body{
 .stage{
   position:relative;
   width:min(94vw,900px);
-  flex:1; /* Kalan tüm dikey alanı kaplar */
+  flex:1;
   max-height:650px;
   margin-top:15px;
   z-index:2;
@@ -151,21 +147,16 @@ body{
   position:absolute;
   left:50%;
   bottom:38px;
-
   width:155px;
   height:130px;
-
   transform:translateX(-50%);
-
   cursor:pointer;
-  z-index:30;
-
-  transition:
-    transform .35s ease,
-    opacity .7s ease;
-
-   touch-action: manipulation;
-   -webkit-tap-highlight-color: transparent;
+  z-index:999; /* Tıklanabilmesi için HER ŞEYİN önüne alındı */
+  transition:transform .35s ease, opacity .7s ease;
+  
+  /* Mobil cihazlarda dokunmatik hassasiyetini iyileştirir */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .gift:hover{
@@ -181,108 +172,57 @@ body{
   position:absolute;
   left:0;
   bottom:0;
-
   width:155px;
   height:105px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #d96868 0%,
-      var(--gift-red) 55%,
-      var(--gift-red-dark) 100%
-    );
-
+  background:linear-gradient(135deg, #d96868 0%, var(--gift-red) 55%, var(--gift-red-dark) 100%);
   border-radius:5px;
-
-  box-shadow:
-    0 16px 30px rgba(0,0,0,.30);
+  box-shadow:0 16px 30px rgba(0,0,0,.30);
 }
 
 .gift-lid{
   position:absolute;
-
   left:-8px;
   top:-18px;
-
   width:171px;
   height:30px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #e47777,
-      var(--gift-red)
-    );
-
+  background:linear-gradient(135deg, #e47777, var(--gift-red));
   border-radius:5px;
-
   transform-origin:50% 100%;
-
-  transition:
-    transform .75s cubic-bezier(.2,.8,.2,1),
-    top .75s ease;
+  transition:transform .75s cubic-bezier(.2,.8,.2,1), top .75s ease;
 }
 
 .gift.open .gift-lid{
-  transform:
-    translateY(-65px)
-    rotate(-8deg);
+  transform:translateY(-65px) rotate(-8deg);
 }
 
 .gift-ribbon-vertical{
   position:absolute;
-
   left:50%;
   top:0;
-
   width:25px;
   height:100%;
-
   transform:translateX(-50%);
-
-  background:
-    linear-gradient(
-      90deg,
-      var(--ribbon-dark),
-      var(--ribbon),
-      var(--ribbon-dark)
-    );
+  background:linear-gradient(90deg, var(--ribbon-dark), var(--ribbon), var(--ribbon-dark));
 }
 
 .gift-ribbon-horizontal{
   position:absolute;
-
   left:0;
   top:18px;
-
   width:100%;
   height:20px;
-
-  background:
-    linear-gradient(
-      180deg,
-      var(--ribbon),
-      var(--ribbon-dark)
-    );
+  background:linear-gradient(180deg, var(--ribbon), var(--ribbon-dark));
 }
 
 .bow{
   position:absolute;
-
   left:50%;
   top:-47px;
-
   width:65px;
   height:38px;
-
   transform:translateX(-50%);
-
   z-index:4;
-
-  transition:
-    transform .65s ease,
-    opacity .4s ease;
+  transition:transform .65s ease, opacity .4s ease;
 }
 
 .bow-left,
@@ -318,10 +258,7 @@ body{
 
 .gift.open .bow{
   opacity:0;
-  transform:
-    translateX(-50%)
-    translateY(-30px)
-    scale(.7);
+  transform:translateX(-50%) translateY(-30px) scale(.7);
 }
 
 .gift-light{
@@ -421,6 +358,7 @@ body{
   transform:rotate(var(--rot)) scaleY(1);
   opacity:1;
 }
+
 
 /* =========================================================
    JS İLE EKLENEN ÇİÇEK DALLARI (.twig)
@@ -686,7 +624,6 @@ body{
   border-radius:34px 34px 0 0;
 }
 
-/* Kalp parçalarının kırık görünmesini engellemek için düzeltildi */
 .heart::before{
   left:27px;
   transform:rotate(-45deg);
@@ -863,16 +800,14 @@ body{
   transform:translate(-50%, 30px);
   transition:opacity .9s ease, transform .9s ease;
   
-  /* YENİ: Görünmezken tıklamaları engellememesi için kalkanı kaldırıyoruz */
+  /* Hediye kutusu üzerine tıklamayı engellememesi için kalkanı kaldırıyoruz */
   pointer-events: none; 
 }
 
 .note-card.visible{
   opacity:1;
   transform:translate(-50%, 0); 
-  
-  /* YENİ: Not ekrana gelince tekrar etkileşime (metin kopyalama vs) açık hale gelsin */
-  pointer-events: auto; 
+  pointer-events: auto; /* Not çıkınca tekrar tıklanabilir hale gelir */
 }
 
 .note-card::before{
@@ -905,18 +840,18 @@ body{
 @media(max-width:768px){
   .bouquet-origin{
     transform:scale(.75);
-    bottom:110px; /* Not havada çıkacağı için çiçeği biraz yukarı aldık */
+    bottom:110px;
   }
 }
 
 @media(max-width:600px){
   .bouquet-origin{
     transform:scale(.6);
-    bottom:140px; /* Mobilde çiçekler daha yukarıda başlasın */
+    bottom:140px;
   }
   .gift{
     transform:translateX(-50%) scale(.9);
-    bottom:55px; /* Hediye kutusu da biraz daha yukarıda dursun */
+    bottom:55px;
   }
   .gift:hover{
     transform:translateX(-50%) scale(.95);
@@ -972,11 +907,9 @@ body{
 ====================================================== -->
 
 <div class="title-wrap" id="title">
-
   <h1>
-    Seni seviyorum, iyi ki benimsin.
+    Sana bir demet papatya 🌼
   </h1>
-
 </div>
 
 
@@ -993,10 +926,7 @@ body{
 
   <div class="bouquet-origin" id="bouquet">
     
-    <!-- KALBİN AÇACAĞI MERKEZ SAP -->
     <div class="heart-stem"></div>
-
-    <!-- ANA DEMET SAPLARI -->
 
     <div class="bouquet-stem" style="left:-32px; --rot:-17deg;"></div>
     <div class="bouquet-stem" style="left:-17px; --rot:-9deg;"></div>
@@ -1004,32 +934,23 @@ body{
     <div class="bouquet-stem" style="left:15px; --rot:7deg;"></div>
     <div class="bouquet-stem" style="left:30px; --rot:15deg;"></div>
 
-    <!-- YAN DALLAR -->
-
     <div class="bouquet-branch" style="--x:-35px; --bottom:35px; --height:105px; --rot:-38deg;"></div>
     <div class="bouquet-branch" style="--x:35px; --bottom:38px; --height:110px; --rot:38deg;"></div>
     <div class="bouquet-branch" style="--x:-20px; --bottom:65px; --height:95px; --rot:-28deg;"></div>
     <div class="bouquet-branch" style="--x:22px; --bottom:65px; --height:95px; --rot:28deg;"></div>
 
-    <!-- BUKET BAĞI -->
     <div class="bouquet-wrap"></div>
 
-    <!-- YAPRAKLAR -->
     <div class="leaf left"></div>
     <div class="leaf right"></div>
     <div class="leaf mid-left"></div>
     <div class="leaf mid-right"></div>
 
 
-    <!-- =================================================
-         KALP KAPSAYICI
-    ================================================== -->
-
     <div class="heart-container" id="heartContainer">
       <div class="heart-glow"></div>
       <div class="heart"></div>
     </div>
-
 
   </div>
 
@@ -1039,26 +960,20 @@ body{
   ==================================================== -->
 
   <div class="gift" id="gift">
-
     <div class="gift-light"></div>
-
     <div class="gift-box">
       <div class="gift-ribbon-vertical"></div>
       <div class="gift-ribbon-horizontal"></div>
     </div>
-
     <div class="gift-lid"></div>
-
     <div class="bow">
       <div class="bow-left"></div>
       <div class="bow-right"></div>
       <div class="bow-center"></div>
     </div>
-
     <div class="click-hint">
       Dokun 🌼
     </div>
-
   </div>
 
 
@@ -1073,7 +988,7 @@ body{
   <p class="note-text" id="myNote">
 Gülüşü güzel kadınlar papatya severmiş.
 
-<span style="font-size: 14px; font-style: italic; color: #777; display: block; margin-top: 15px;">İkimizin de elinde olmayan durumlardan dolayı çiçek gönderemedim. Artık bu şekilde idare edicez. Stajında başarılar sevgilim. Sana güveniyorum. İyi bir asd olacaksın.</span>
+<span style="font-size: 14px; font-style: italic; color: #777; display: block; margin-top: 15px;">İkimizin de elinde olmayan durumlardan dolayı çiçek gönderemedim. Artık bu şekilde idare edicez. Stajında başarılar sevgilim. Sana güveniyorum. İyi bir mimar olacaksın.</span>
   </p>
 </div>
 
@@ -1208,21 +1123,13 @@ function createHeartParticles(){
 
 
 /* =========================================================
-   HEDİYEYE TIKLAMA
-========================================================= */
-/* =========================================================
-   HEDİYEYE TIKLAMA / DOKUNMA (MOBİL DESTEKLİ)
+   HEDİYEYE TIKLAMA (SADECE CLICK OLARAK DÜZENLENDİ)
 ========================================================= */
 let opened = false;
 
-function openGift(e) {
-  if (opened) return;
+gift.addEventListener('click', ()=>{
+  if(opened) return;
   opened = true;
-
-  // Telefonda hem dokunma hem tıklama aynı anda tetiklenirse diye birini engelliyoruz
-  if (e && e.type === 'touchstart') {
-    e.preventDefault();
-  }
 
   // 1. Kutu Açılıyor
   gift.classList.add('open');
@@ -1257,11 +1164,7 @@ function openGift(e) {
   setTimeout(()=>{
     noteCard.classList.add('visible');
   }, 4200);
-}
-
-// Hem fareyle tıklamayı hem de telefondan dokunmayı dinliyoruz
-gift.addEventListener('click', openGift);
-gift.addEventListener('touchstart', openGift, { passive: false });
+});
 
 </script>
 
