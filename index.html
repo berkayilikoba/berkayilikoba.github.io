@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ss</title>
+<title>asd</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
@@ -39,7 +39,6 @@
   box-sizing:border-box;
 }
 
-/* Sayfa hiçbir zaman kaydırılamasın, tam ekrana otursun */
 html,
 body{
   margin:0;
@@ -106,7 +105,7 @@ body{
   transform:translateY(-15px);
   transition:opacity 1s ease, transform 1s ease;
   z-index:5;
-  pointer-events:none; /* Görünmez kutusu tıklamayı engellemesin */
+  pointer-events:none;
 }
 
 .title-wrap.visible{
@@ -151,10 +150,8 @@ body{
   height:130px;
   transform:translateX(-50%);
   cursor:pointer;
-  z-index:999; /* Tıklanabilmesi için HER ŞEYİN önüne alındı */
-  transition:transform .35s ease, opacity .7s ease;
-  
-  /* Mobil cihazlarda dokunmatik hassasiyetini iyileştirir */
+  z-index:999;
+  transition:transform .35s ease, opacity .7s ease, bottom 0.3s ease;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
@@ -310,6 +307,7 @@ body{
   height:0;
   z-index:10;
   pointer-events:none;
+  transition: bottom 0.3s ease;
 }
 
 
@@ -799,15 +797,13 @@ body{
   opacity:0;
   transform:translate(-50%, 30px);
   transition:opacity .9s ease, transform .9s ease;
-  
-  /* Hediye kutusu üzerine tıklamayı engellememesi için kalkanı kaldırıyoruz */
   pointer-events: none; 
 }
 
 .note-card.visible{
   opacity:1;
   transform:translate(-50%, 0); 
-  pointer-events: auto; /* Not çıkınca tekrar tıklanabilir hale gelir */
+  pointer-events: auto; 
 }
 
 .note-card::before{
@@ -839,19 +835,22 @@ body{
 
 @media(max-width:768px){
   .bouquet-origin{
-    transform:scale(.75);
-    bottom:110px;
+    transform:scale(.8);
+    bottom:220px; /* Tablette yukarı taşıdık */
+  }
+  .gift{
+    bottom: 170px; /* Hediyeyi çiçek merkezine uyarladık */
   }
 }
 
 @media(max-width:600px){
   .bouquet-origin{
-    transform:scale(.6);
-    bottom:140px;
+    transform:scale(.7);
+    bottom:270px; /* Mobilde papatyaları notun tamamen üstünde yeşermesi için ekranın ortasına taşıdık */
   }
   .gift{
     transform:translateX(-50%) scale(.9);
-    bottom:55px;
+    bottom:220px; /* Hediye kutusunu da çiçek sapının başlangıcına taşıdık */
   }
   .gift:hover{
     transform:translateX(-50%) scale(.95);
@@ -1123,7 +1122,7 @@ function createHeartParticles(){
 
 
 /* =========================================================
-   HEDİYEYE TIKLAMA (SADECE CLICK OLARAK DÜZENLENDİ)
+   HEDİYEYE TIKLAMA
 ========================================================= */
 let opened = false;
 
@@ -1131,36 +1130,29 @@ gift.addEventListener('click', ()=>{
   if(opened) return;
   opened = true;
 
-  // 1. Kutu Açılıyor
   gift.classList.add('open');
 
-  // 2. Buket Yükseliyor
   setTimeout(()=>{
     bouquet.classList.add('bloomed');
   }, 400);
 
-  // 3. Kalp tam dalın ucunda açıyor
   setTimeout(()=>{
     createHeartParticles();
     heartContainer.classList.add('show');
   }, 2100);
 
-  // 4. Kalp patlıyor
   setTimeout(()=>{
     heartContainer.classList.add('explode');
   }, 3500);
 
-  // 5. Başlık
   setTimeout(()=>{
     title.classList.add('visible');
   }, 1200);
 
-  // 6. Kutuyu gizle
   setTimeout(()=>{
     gift.classList.add('hide');
   }, 1500);
 
-  // 7. Notu göster
   setTimeout(()=>{
     noteCard.classList.add('visible');
   }, 4200);
