@@ -1,451 +1,1164 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-B7SV7BXWQG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SÇS</title>
 
-  gtag('config', 'G-B7SV7BXWQG');
-</script>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Berkay ILIKOBA</title>
-<link rel="icon" type="image/x-icon" href="favicon1.ico" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
 
 <style>
-  body {
 
-      .youtube-section {
-    flex: 1 1 48%;
-    max-width: 48%;
-    background-color: #222;
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
-    color: #bbb;
-    box-sizing: border-box;
-    margin-bottom: 0;
-  }
+:root{
+  --sky-deep:#241a33;
+  --sky-mid:#5b3f63;
+  --sky-warm:#7a5570;
 
-  .youtube-section h2 {
-    color: #50fa7b;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
+  --daisy-petal:#fffaf1;
+  --daisy-petal-shadow:#eee2cc;
+  --daisy-center:#f2b73f;
+  --daisy-center-dark:#d99423;
 
-  .youtube-section ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
+  --leaf:#7c9473;
+  --leaf-dark:#5c7355;
 
-  .youtube-section li {
-    background-color: #333;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
-  }
+  --card-bg:#fdf6ea;
+  --ink:#333;
 
-  .youtube-section li:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
+  --gift-red:#c95757;
+  --gift-red-dark:#9e3f45;
+  --ribbon:#f3c86b;
+  --ribbon-dark:#d8a94f;
 
-  .youtube-section a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: none;
-  }
+  --heart:#ef5b73;
+  --heart-dark:#c83d59;
+}
 
-  .youtube-section a:hover {
-    text-decoration: underline;
-  }
+*{
+  box-sizing:border-box;
+}
 
-    background-color: #121212;
-    color: #ddd;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 2rem;
-  }
-  a {
-    color: #61dafb;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  .container {
-    max-width: 1000px; /* biraz daralttım, istersen artırabilirsin */
-    margin: auto;
+html,
+body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
 
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
+body{
+  background:
+    radial-gradient(
+      ellipse at 50% 18%,
+      var(--sky-warm) 0%,
+      var(--sky-mid) 45%,
+      var(--sky-deep) 100%
+    );
 
-  /* Üst kart bölümü */
-  .top-section {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    align-items: center;
-    width: 100%;
-  }
-  .top-image {
-    flex: 1;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(80,150,250,0.5);
-    max-height: 350px;
-  }
-  .top-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .top-text {
-    flex: 1;
-    background-color: #222;
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.7);
-  }
-  .top-text code {
-    color: #50fa7b;
-    font-weight: 700;
-    font-size: 0.9rem;
-  }
-  .top-text h1 {
-    font-size: 2.2rem;
-    margin: 0.5rem 0 1rem 0;
-    color: #fff;
-  }
-  .top-text p {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-  .top-text strong {
-    color: #f8f8f2;
-  }
-  .top-text .buttons {
-    margin-top: 1.5rem;
-  }
-  .btn {
-    display: inline-block;
-    background: transparent;
-    border: 1.5px solid #50fa7b;
-    color: #50fa7b;
-    border-radius: 20px;
-    padding: 0.4rem 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
-    margin-right: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-decoration: none;
-  }
-  .btn:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  font-family:'Inter',sans-serif;
+  position:relative;
+}
 
-  /* Alt bölümler ikili flex */
-  .about-section,
-  .projects-section,
-  .medium-section,
-  .skills-description,
-  .cv-section,
-  .contact-section {
-    flex: 1 1 48%; /* %48 genişlik verdim, 2 yan yana sığar */
-    max-width: 48%;
-    background-color: #222;
-    padding: 2rem 2.5rem;
-    border-radius: 20px;
-    color: #bbb;
-    box-sizing: border-box;
-    margin-bottom: 0;
-  }
 
-  /* Başlıklar */
-  .about-section h2,
-  .projects-section h2,
-  .medium-section h2,
-  .skills-description h2,
-  .cv-section h2,
-  .contact-section h2 {
-    color: #50fa7b;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
+/* =========================================================
+   YILDIZLAR
+========================================================= */
 
-  /* About */
-  .about-text h2 {
-    color: #50fa7b;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .about-text p {
-    margin-bottom: 1rem;
-  }
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 1rem;
-  }
-  .tag {
-    background-color: #444;
-    color: #50fa7b;
-    font-weight: 600;
-    font-size: 0.9rem;
-    padding: 0.3rem 0.8rem;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    gap: 0.3rem;
-  }
-  .tag svg {
-    fill: #50fa7b;
-    width: 16px;
-    height: 16px;
-  }
-  .about-image {
-    flex: 1;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(80,250,123,0.2);
-  }
-  .about-image img {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 16px;
-  }
+.stars{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
 
-  /* Projeler */
-  .project-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  .project-list li {
-    background-color: #333;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
-  }
-  .project-list li:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
-  .project-list a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .project-list a:hover {
-    text-decoration: underline;
-  }
+.star{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:#fff;
+  border-radius:50%;
+  opacity:.6;
+  animation:twinkle 3.5s ease-in-out infinite;
+}
 
-  /* Medium Yazılar */
-  .medium-section ul {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  .medium-section li {
-    background-color: #333;
-    margin-bottom: 1rem;
-    padding: 1rem 1.5rem;
-    border-radius: 12px;
-    transition: background-color 0.3s ease;
-  }
-  .medium-section li:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
-  .medium-section a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: none;
-  }
-  .medium-section a:hover {
-    text-decoration: underline;
-  }
+@keyframes twinkle{
+  0%,100%{opacity:.15}
+  50%{opacity:.85}
+}
 
-  /* Teknik Yetenekler */
-  .skills-description p {
-    margin-bottom: 1rem;
-  }
-  .skills-description strong {
-    color: #50fa7b;
-  }
 
-  /* CV */
-  .cv-section p {
-    margin-bottom: 1rem;
-  }
-  .cv-section a {
-    display: inline-block;
-    background: transparent;
-    border: 1.5px solid #50fa7b;
-    color: #50fa7b;
-    border-radius: 20px;
-    padding: 0.5rem 1.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  .cv-section a:hover {
-    background-color: #50fa7b;
-    color: #121212;
-  }
+/* =========================================================
+   BAŞLIK
+========================================================= */
 
-  /* İletişim */
-  .contact-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  .contact-list li {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-  }
-  .contact-list a {
-    color: #61dafb;
-    text-decoration: none;
-  }
-  .contact-list a:hover {
-    text-decoration: underline;
-  }
+.title-wrap{
+  position:relative;
+  width:100%;
+  text-align:center;
+  margin-top:min(35px, 5vh);
+  opacity:0;
+  transform:translateY(-15px);
+  transition:opacity 1s ease, transform 1s ease;
+  z-index:5;
+  pointer-events:none;
+}
 
-  /* Responsive: mobilde alt alta */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-    .top-section {
-      flex-direction: column;
-    }
-    .top-text, .top-image {
-      width: 100%;
-    }
-    .top-image {
-      height: 250px;
-    }
-    .about-image {
-      height: 200px;
-    }
-    .about-section,
-    .projects-section,
-    .medium-section,
-    .skills-description,
-    .cv-section,
-    .contact-section {
-      max-width: 100%;
-      flex-basis: 100%;
-    }
+.title-wrap.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.title-wrap h1{
+  font-family:'Nunito',sans-serif;
+  font-size:clamp(1.8rem,5vw,2.7rem);
+  color:#fdf6ea;
+  margin:0;
+  font-weight:800;
+  letter-spacing:-.02em;
+  text-shadow:0 3px 15px rgba(0,0,0,.35);
+}
+
+
+/* =========================================================
+   SAHNE
+========================================================= */
+
+.stage{
+  position:relative;
+  width:min(94vw,900px);
+  flex:1;
+  max-height:650px;
+  margin-top:15px;
+  z-index:2;
+}
+
+
+/* =========================================================
+   HEDİYE KUTUSU
+========================================================= */
+
+.gift{
+  position:absolute;
+  left:50%;
+  bottom:38px;
+  width:155px;
+  height:130px;
+  transform:translateX(-50%);
+  cursor:pointer;
+  z-index:999;
+  transition:transform .35s ease, opacity .7s ease, bottom 0.3s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.gift:hover{
+  transform:translateX(-50%) scale(1.05);
+}
+
+.gift.hide{
+  opacity:0;
+  pointer-events:none;
+}
+
+.gift-box{
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:155px;
+  height:105px;
+  background:linear-gradient(135deg, #d96868 0%, var(--gift-red) 55%, var(--gift-red-dark) 100%);
+  border-radius:5px;
+  box-shadow:0 16px 30px rgba(0,0,0,.30);
+}
+
+.gift-lid{
+  position:absolute;
+  left:-8px;
+  top:-18px;
+  width:171px;
+  height:30px;
+  background:linear-gradient(135deg, #e47777, var(--gift-red));
+  border-radius:5px;
+  transform-origin:50% 100%;
+  transition:transform .75s cubic-bezier(.2,.8,.2,1), top .75s ease;
+}
+
+.gift.open .gift-lid{
+  transform:translateY(-65px) rotate(-8deg);
+}
+
+.gift-ribbon-vertical{
+  position:absolute;
+  left:50%;
+  top:0;
+  width:25px;
+  height:100%;
+  transform:translateX(-50%);
+  background:linear-gradient(90deg, var(--ribbon-dark), var(--ribbon), var(--ribbon-dark));
+}
+
+.gift-ribbon-horizontal{
+  position:absolute;
+  left:0;
+  top:18px;
+  width:100%;
+  height:20px;
+  background:linear-gradient(180deg, var(--ribbon), var(--ribbon-dark));
+}
+
+.bow{
+  position:absolute;
+  left:50%;
+  top:-47px;
+  width:65px;
+  height:38px;
+  transform:translateX(-50%);
+  z-index:4;
+  transition:transform .65s ease, opacity .4s ease;
+}
+
+.bow-left,
+.bow-right{
+  position:absolute;
+  top:5px;
+  width:36px;
+  height:27px;
+  background:var(--ribbon);
+  border-radius:50% 50% 45% 45%;
+}
+
+.bow-left{
+  left:0;
+  transform:rotate(-25deg);
+}
+
+.bow-right{
+  right:0;
+  transform:rotate(25deg);
+}
+
+.bow-center{
+  position:absolute;
+  left:50%;
+  top:7px;
+  width:18px;
+  height:23px;
+  transform:translateX(-50%);
+  background:var(--ribbon-dark);
+  border-radius:50%;
+}
+
+.gift.open .bow{
+  opacity:0;
+  transform:translateX(-50%) translateY(-30px) scale(.7);
+}
+
+.gift-light{
+  position:absolute;
+  left:50%;
+  top:-30px;
+  width:120px;
+  height:120px;
+  transform:translateX(-50%);
+  background:radial-gradient(circle, rgba(255,241,178,.8), rgba(255,241,178,0) 70%);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .5s ease;
+  z-index:0;
+}
+
+.gift.open .gift-light{
+  opacity:1;
+}
+
+.click-hint{
+  position:absolute;
+  left:50%;
+  bottom:-38px;
+  transform:translateX(-50%);
+  width:max-content;
+  color:rgba(255,255,255,.8);
+  font-family:'Nunito',sans-serif;
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  transition:opacity .4s ease;
+}
+
+.gift.open .click-hint{
+  opacity:0;
+}
+
+
+/* =========================================================
+   BUKET ANA ALANI
+========================================================= */
+
+.bouquet-origin{
+  position:absolute;
+  left:50%;
+  bottom:80px;
+  width:0;
+  height:0;
+  z-index:10;
+  pointer-events:none;
+  transition: bottom 0.3s ease;
+}
+
+
+/* =========================================================
+   DEMETİN İÇ SAPLARI
+========================================================= */
+
+.bouquet-stem{
+  position:absolute;
+  bottom:-8px;
+  width:8px;
+  height:210px;
+  background:linear-gradient(90deg, var(--leaf-dark), var(--leaf), var(--leaf-dark));
+  border-radius:8px;
+  transform-origin:bottom center;
+  transform:rotate(var(--rot)) scaleY(0);
+  opacity:0;
+  transition:transform 1.1s cubic-bezier(.2,.8,.2,1), opacity .5s ease;
+}
+
+.bouquet-origin.bloomed .bouquet-stem{
+  transform:rotate(var(--rot)) scaleY(1);
+  opacity:1;
+}
+
+
+/* =========================================================
+   KISA YAN SAPLAR
+========================================================= */
+
+.bouquet-branch{
+  position:absolute;
+  bottom:var(--bottom);
+  left:calc(50% + var(--x));
+  width:5px;
+  height:var(--height);
+  background:linear-gradient(180deg, var(--leaf), var(--leaf-dark));
+  border-radius:5px;
+  transform-origin:bottom center;
+  transform:rotate(var(--rot)) scaleY(0);
+  opacity:0;
+  transition:transform .9s cubic-bezier(.2,.8,.2,1), opacity .4s ease;
+}
+
+.bouquet-origin.bloomed .bouquet-branch{
+  transform:rotate(var(--rot)) scaleY(1);
+  opacity:1;
+}
+
+
+/* =========================================================
+   JS İLE EKLENEN ÇİÇEK DALLARI (.twig)
+========================================================= */
+.twig {
+  position: absolute;
+  left: calc(50% + var(--start-x));
+  bottom: calc(10px + var(--start-y));
+  width: 4px;
+  height: var(--len);
+  margin-left: -2px;
+  background: linear-gradient(180deg, var(--leaf), var(--leaf-dark));
+  border-radius: 4px;
+  transform-origin: 50% 100%;
+  transform: rotate(var(--twig-rot)) scaleY(0);
+  opacity: 0;
+  transition: transform 1.2s cubic-bezier(.2,.8,.2,1), opacity 0.5s ease;
+  z-index: 9;
+}
+.bouquet-origin.bloomed .twig {
+  transform: rotate(var(--twig-rot)) scaleY(1);
+  opacity: 1;
+}
+
+
+/* =========================================================
+   KALBİN ÇIKACAĞI ÖZEL SAP
+========================================================= */
+.heart-stem {
+  position: absolute;
+  left: 50%;
+  bottom: 10px; 
+  width: 6px;
+  height: 220px;
+  margin-left: -3px;
+  background: linear-gradient(180deg, var(--leaf), var(--leaf-dark));
+  border-radius: 6px;
+  transform-origin: 50% 100%;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 1.2s cubic-bezier(.2,.8,.2,1), opacity 0.5s ease;
+  z-index: 11;
+}
+.bouquet-origin.bloomed .heart-stem {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+
+/* =========================================================
+   BUKETİ BAĞLAYAN ŞERİT
+========================================================= */
+
+.bouquet-wrap{
+  position:absolute;
+  left:50%;
+  bottom:-7px;
+  width:108px;
+  height:43px;
+  transform:translateX(-50%) rotate(-3deg) scale(.4);
+  opacity:0;
+  background:linear-gradient(180deg, #d8a94f, #f3c86b 45%, #d8a94f);
+  border-radius:8px;
+  box-shadow:0 4px 8px rgba(0,0,0,.22);
+  z-index:15;
+  transition:transform .8s cubic-bezier(.2,.8,.2,1), opacity .5s ease;
+}
+
+.bouquet-origin.bloomed .bouquet-wrap{
+  opacity:1;
+  transform:translateX(-50%) rotate(-3deg) scale(1);
+}
+
+.bouquet-wrap::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:28px;
+  height:28px;
+  transform:translate(-50%,-50%);
+  background:var(--ribbon-dark);
+  border-radius:50%;
+}
+
+.bouquet-wrap::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:30px;
+  width:55px;
+  height:32px;
+  transform:translateX(-50%) rotate(4deg);
+  background:linear-gradient(90deg, var(--ribbon-dark), var(--ribbon));
+  clip-path:polygon(0 0, 100% 0, 85% 100%, 50% 75%, 15% 100%);
+}
+
+
+/* =========================================================
+   YAPRAKLAR
+========================================================= */
+
+.leaf{
+  position:absolute;
+  width:58px;
+  height:26px;
+  background:var(--leaf);
+  opacity:0;
+  transition:opacity .7s ease, transform .7s ease;
+  z-index:5;
+}
+
+.leaf.left{
+  left:calc(50% - 65px);
+  bottom:52px;
+  transform:rotate(-28deg) scale(.3);
+  border-radius:100% 0 100% 0;
+}
+
+.leaf.right{
+  left:calc(50% + 10px);
+  bottom:58px;
+  transform:rotate(28deg) scale(.3);
+  border-radius:0 100% 0 100%;
+}
+
+.leaf.mid-left{
+  left:calc(50% - 78px);
+  bottom:105px;
+  width:48px;
+  height:22px;
+  transform:rotate(-42deg) scale(.3);
+  border-radius:100% 0 100% 0;
+}
+
+.leaf.mid-right{
+  left:calc(50% + 30px);
+  bottom:110px;
+  width:48px;
+  height:22px;
+  transform:rotate(42deg) scale(.3);
+  border-radius:0 100% 0 100%;
+}
+
+.bouquet-origin.bloomed .leaf{
+  opacity:1;
+}
+.bouquet-origin.bloomed .leaf.left{
+  transform:rotate(-28deg) scale(1);
+}
+.bouquet-origin.bloomed .leaf.right{
+  transform:rotate(28deg) scale(1);
+}
+.bouquet-origin.bloomed .leaf.mid-left{
+  transform:rotate(-42deg) scale(1);
+}
+.bouquet-origin.bloomed .leaf.mid-right{
+  transform:rotate(42deg) scale(1);
+}
+
+
+/* =========================================================
+   PAPATYA
+========================================================= */
+
+.daisy{
+  position:absolute;
+  left:50%;
+  bottom:10px;
+  width:82px;
+  height:82px;
+  margin-left:-41px;
+  margin-bottom:-41px;
+  opacity:0;
+  transform:translate(var(--dx), var(--dy)) scale(0) rotate(0deg);
+  transition:transform 1.3s cubic-bezier(.175,.885,.32,1.25), opacity .6s ease;
+  z-index:12;
+}
+
+.bouquet-origin.bloomed .daisy{
+  opacity:1;
+  transform:translate(var(--dx), var(--dy)) scale(var(--s)) rotate(var(--rot));
+}
+
+.daisy .sway-wrap{
+  width:100%;
+  height:100%;
+  transform-origin:50% 90%;
+}
+
+.bouquet-origin.bloomed .daisy .sway-wrap{
+  animation:sway 5s ease-in-out infinite;
+  animation-delay:var(--sway-delay);
+}
+
+@keyframes sway{
+  0%,100%{transform:rotate(-2deg);}
+  50%{transform:rotate(2deg);}
+}
+
+.petal{
+  position:absolute;
+  width:14px;
+  height:38px;
+  left:50%;
+  top:50%;
+  margin-left:-7px;
+  margin-top:-38px;
+  background:linear-gradient(180deg, var(--daisy-petal), var(--daisy-petal-shadow));
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  transform-origin:50% 100%;
+  filter:drop-shadow(0 1px 1px rgba(0,0,0,.08));
+}
+
+.center-c{
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:27px;
+  height:27px;
+  margin-left:-13.5px;
+  margin-top:-13.5px;
+  border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, var(--daisy-center), var(--daisy-center-dark));
+  box-shadow:inset 0 -2px 3px rgba(0,0,0,.15);
+}
+
+
+/* =========================================================
+   ❤️ KALP VE ÇİÇEK GİBİ AÇMASI
+========================================================= */
+
+.heart-container{
+  position:absolute;
+  left:50%;
+  bottom:10px;
+  width:0;
+  height:0;
+  z-index:25;
+  pointer-events:none;
+  opacity:0;
+}
+
+.heart{
+  position:absolute;
+  left:50%;
+  top:-220px; 
+  width:58px;
+  height:58px;
+  transform:translate(-50%,-50%) scale(0);
+  opacity:0;
+  filter:drop-shadow(0 5px 12px rgba(0,0,0,.25));
+}
+
+.heart::before,
+.heart::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:34px;
+  height:52px;
+  background:linear-gradient(135deg, var(--heart), var(--heart-dark));
+  border-radius:34px 34px 0 0;
+}
+
+.heart::before{
+  left:27px;
+  transform:rotate(-45deg);
+  transform-origin:0 100%;
+}
+.heart::after{
+  left:-7px;
+  transform:rotate(45deg);
+  transform-origin:100% 100%;
+}
+
+.heart-container.show{
+  opacity:1;
+}
+
+.heart-container.show .heart{
+  animation: heartAppear 1.4s cubic-bezier(.175,.885,.32,1.4) forwards;
+}
+
+@keyframes heartAppear{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(0);
   }
+  45%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(.75);
+  }
+  70%{
+    transform:translate(-50%,-50%) scale(1.15);
+  }
+  100%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+  }
+}
+
+.heart-container.explode .heart{
+  animation: heartExplode .45s ease-out forwards;
+}
+
+@keyframes heartExplode{
+  0%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+  }
+  45%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1.45);
+  }
+  100%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(2.2);
+  }
+}
+
+
+/* =========================================================
+   KALP PATLAMA PARÇACIKLARI
+========================================================= */
+
+.heart-particle{
+  position:absolute;
+  left:0;
+  top:-220px; 
+  width:13px;
+  height:13px;
+  opacity:0;
+  transform:translate(-50%,-50%) scale(0);
+  pointer-events:none;
+}
+
+.heart-particle::before{
+  content:"♥";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:var(--heart);
+  font-size:18px;
+  line-height:1;
+}
+
+.heart-container.explode .heart-particle{
+  animation: particleExplode .9s cubic-bezier(.15,.75,.25,1) forwards;
+  animation-delay:var(--particle-delay);
+}
+
+@keyframes particleExplode{
+  0%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(.2);
+  }
+  15%{
+    opacity:1;
+    transform:translate(
+      calc(-50% + var(--particle-x) * .25),
+      calc(-50% + var(--particle-y) * .25)
+    ) scale(1);
+  }
+  100%{
+    opacity:0;
+    transform:translate(
+      calc(-50% + var(--particle-x)),
+      calc(-50% + var(--particle-y))
+    ) scale(.25);
+  }
+}
+
+
+/* =========================================================
+   KALP IŞILTILARI
+========================================================= */
+
+.heart-glow{
+  position:absolute;
+  left:50%;
+  top:-220px;
+  width:140px;
+  height:140px;
+  transform:translate(-50%,-50%) scale(.2);
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(255,180,190,.5), rgba(255,180,190,0) 70%);
+  opacity:0;
+}
+
+.heart-container.show .heart-glow{
+  animation: glowAppear 1.2s ease-out forwards;
+}
+
+@keyframes glowAppear{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-50%) scale(.2);
+  }
+  50%{
+    opacity:.9;
+    transform:translate(-50%,-50%) scale(1);
+  }
+  100%{
+    opacity:.25;
+    transform:translate(-50%,-50%) scale(1.2);
+  }
+}
+
+.heart-container.explode .heart-glow {
+  animation: glowFadeOut 0.4s ease-out forwards;
+}
+
+@keyframes glowFadeOut {
+  to { 
+    opacity: 0; 
+    transform: translate(-50%, -50%) scale(2); 
+  }
+}
+
+
+/* =========================================================
+   NOT (Tasarım ve Sabitleme)
+========================================================= */
+
+.note-card{
+  position:absolute;
+  bottom:clamp(15px, 4vh, 40px);
+  left:50%; 
+  z-index:50; 
+  width:92%;
+  max-width:480px;
+  background:var(--card-bg);
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 20px 45px rgba(0,0,0,.45);
+  opacity:0;
+  transform:translate(-50%, 30px);
+  transition:opacity .9s ease, transform .9s ease;
+  pointer-events: none; 
+}
+
+.note-card.visible{
+  opacity:1;
+  transform:translate(-50%, 0); 
+  pointer-events: auto; 
+}
+
+.note-card::before{
+  content:"";
+  position:absolute;
+  top:-9px;
+  left:50%;
+  transform:translateX(-50%) rotate(45deg);
+  width:18px;
+  height:18px;
+  background:var(--card-bg);
+}
+
+.note-text{
+  font-family:'Inter',sans-serif;
+  font-size:clamp(1rem,3.5vw,1.15rem);
+  line-height:1.75;
+  color:var(--ink);
+  font-weight:500;
+  margin:0;
+  white-space:pre-line;
+  text-align:center;
+}
+
+
+/* =========================================================
+   MOBİL VE FARKLI EKRANLAR İÇİN UYUMLULUK
+========================================================= */
+
+@media(max-width:768px){
+  .bouquet-origin{
+    transform:scale(.8);
+    bottom:220px; /* Tablette yukarı taşıdık */
+  }
+  .gift{
+    bottom: 170px; /* Hediyeyi çiçek merkezine uyarladık */
+  }
+}
+
+@media(max-width:600px){
+  .bouquet-origin{
+    transform:scale(.7);
+    bottom:270px; /* Mobilde papatyaları notun tamamen üstünde yeşermesi için ekranın ortasına taşıdık */
+  }
+  .gift{
+    transform:translateX(-50%) scale(.9);
+    bottom:220px; /* Hediye kutusunu da çiçek sapının başlangıcına taşıdık */
+  }
+  .gift:hover{
+    transform:translateX(-50%) scale(.95);
+  }
+  .daisy{
+    width:68px;
+    height:68px;
+    margin-left:-34px;
+    margin-bottom:-34px;
+  }
+  .petal{
+    width:12px;
+    height:32px;
+    margin-left:-6px;
+    margin-top:-32px;
+  }
+  .center-c{
+    width:23px;
+    height:23px;
+    margin-left:-11.5px;
+    margin-top:-11.5px;
+  }
+  .note-card{
+    padding:25px 20px;
+    width:94%;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+}
+
 </style>
 </head>
+
+
 <body>
-<div class="container">
-  <!-- Üst Kart -->
-  <div class="top-section">
-    <div class="top-image">
-      <img src="images/resim.jpeg" alt="Berkay ILIKOBA Profil" />
-    </div>
-    <div class="top-text">
-      <code>&lt;code&gt;I build <strong>computer vision, image processing & machine learning tools</strong>&lt;/code&gt;</code>
-      <h1>Berkay ILIKOBA</h1>
-      <p>Bilgisayar Mühendisliği 2. sınıf öğrencisi, Python ve görüntü işleme & makine öğrenmesi odaklı geliştirici. <strong>Teknofest Savaşan İHA Takımı</strong> kaptanıyım.</p>
-      <div class="buttons">
-        <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener" class="btn">GitHub</a>
-        <a href="https://www.linkedin.com/in/berkay-ilikoba/" class="btn">LinkedIn</a>
-        <a href="mailto:ilikobaberkay@gmail.com" class="btn">Mail</a>
-      </div>
-    </div>
-  </div>
 
-  <!-- About -->
-  <div class="about-section">
-    <div class="about-text">
-      <h2>Hakkımda</h2>
-      <p>Merhaba, ben Berkay ILIKOBA. Çukurova Üniversitesi Bilgisayar Mühendisliği 2. sınıf öğrencisiyim. 10 yaşımdan beri programlama ve robotik ile ilgileniyorum. Özellikle bilgisayarlı görü, makine öğrenmesi ve robotik alanlarında derin bir ilgiye sahibim ve bu alanlarda çeşitli projeler geliştiriyorum.</p>
-      <p>OpenCV, Scikit-Learn, Keras ve TensorFlow gibi güçlü kütüphanelerle görüntü işleme, analiz ve sınıflandırma yapıyor; elde ettiğim sonuçları Arduino ve Raspberry Pi gibi donanımlarla robotik projelerime entegre ediyorum.</p>
-      <p>Şu anda Huawei Student Developers Çukurova Öğrenci Topluluğu’nda Proje Koordinatörü ve Takım Kaptanı olarak aktif görev yapıyorum. Ekibimle birlikte TEKNOFEST Savaşan İHA projesini yürütüyoruz. Bu süreç, hem teknik bilgi birikimimi artırmamı hem de liderlik ve takım yönetimi becerilerimi geliştirmemi sağlıyor.</p>
-      <div class="tags">
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Yaş: 21</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> İlgi Alanları: Görüntü İşleme, Robotik, Makine Öğrenmesi, Bilgisayarlı Görü</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Eğitim: Çukurova Üniversitesi</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Konum: Adana, Türkiye</div>
-        <div class="tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Takım: Huawei Student Developers</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- Projeler -->
-  <div class="projects-section">
-    <h2>Projelerim</h2>
-    <ul class="project-list">
-      <li><a href="https://github.com/berkayilikoba/MNIST-CNN-Classifier" target="_blank" rel="noopener">MNIST CNN Classifier</a> - Keras kullanarak el yazısı rakamları sınıflandıran konvolüsyonel sinir ağı projesi.</li>
-      <li><a href="https://github.com/berkayilikoba/Real-Time-Hand-Gesture-Recognition-and-RGB-LED-Control-using-OpenCV-MediaPipe-and-Arduino" target="_blank" rel="noopener">El Hareketleri Tanımlama ve LED Kontrolü</a> - Mediapipe ile el hareketlerini tanımlama ve Arduino ile led kontrolü.</li>
-      <li><a href="https://github.com/berkayilikoba/CIFAR10-CNN-Classifier" target="_blank" rel="noopener">CIFAR10 CNN Classifier</a> - Keras kullanarak CIFAR10 veri seti sınıflandırması ve optimizasyonu.</li>
-      <li><a href="https://github.com/berkayilikoba/GTSRB-Traffic-Sign-Recognition-with-CNN" target="_blank" rel = "noopener">GTSRB Traffic Sign Recognition with CNN</a> - GTSRB veri seti üzerinde CNN modeli eğitim ve optimizasyonu projesi.</li>
-      <li><a href="https://github.com/berkayilikoba/titanic-dataset-logistic-regression" target=""_blank" rel="noopener">Titanic Logistic Regression</a> - Yolcuların hayatta kalma olasılığını lojistik regresyon modeli ile tahmin eden basit bir sınıflandırma projesi.</li>
-      
-  </ul>
-  </div>
+<!-- =====================================================
+     YILDIZLAR
+====================================================== -->
 
-  <!-- Medium Yazılarım -->
-  <div class="medium-section">
-    <h2>Medium Yazılarım</h2>
-    <ul>
-      <li><a href="https://medium.com/@ilikobaberkay/keras-ile-mnist-g%C3%B6r%C3%BCnt%C3%BC-s%C4%B1n%C4%B1fland%C4%B1rma-i%C3%A7in-yapay-sinir-a%C4%9F%C4%B1-ann-97-21-27a6058acb14" target="_blank" rel="noopener">Keras ile MNIST Görüntü Sınıflandırma için Yapay Sinir Ağı (ANN) (97.21%)</a></li>
-      <li><a href ="https://medium.com/@ilikobaberkay/b6dd5d42cb3a" target="_blank" rel="noopener">Evrişimli Sinir Ağlarının Temel Taşı: LeNet-5</a></li>
-    </ul>
-  </div>
+<div class="stars" id="stars"></div>
 
-  <!-- Teknik Yetenekler -->
-  <div class="skills-description">
-    <h2>Teknik Yeteneklerim</h2>
-    <p><strong>Python:</strong> İleri düzey makine öğrenmesi ve derin öğrenme modelleri geliştirebiliyorum.</p>
-    <p><strong>Keras:</strong> Derin öğrenme projelerinde güçlü model tasarımı, uygulaması ve optimizasyonu yapabiliyorum.</p>
-    <p><strong>OpenCV:</strong> Karmaşık görüntü işleme ve bilgisayarlı görü uygulamaları geliştiriyorum.</p>
-    <p><strong>C++:</strong> Performans gerektiren uygulamalar ve OpenCV'de deneyimliyim.</p>
-    <p><strong>Machine Learning:</strong> Makine öğrenmesi algoritmaları tasarlayarak çeşitli problemleri çözüyorum.</p>
-    <p><strong>Computer Vision:</strong> Görüntü analiz ve tanıma projelerinde deneyimliyim.</p>
-  </div>
-  <!-- YouTube Videolarım -->
-  <div class="youtube-section">
-    <h2>YouTube Videolarım</h2>
-    <ul class="project-list">
-      <li><a href="https://www.youtube.com/watch?v=7k1veUDPH5A&list=PLF39vLmgGquzc3CbQTg8DFqXqlwVAlIgq" target="_blank" rel="noopener">OpenCV Temelleri</a></li>
-      <li><a href="https://youtu.be/slfoU3_PvV8" target="_blank" rel="noopener">YOLOv8 ile Custom Dataset Eğitimi</a></li>
-      
-    </ul>
-  </div>
 
-  <!-- CV -->
-  <div class="cv-section">
-    <h2>Özgeçmiş (CV)</h2>
-    <p>Bilgisayar Mühendisliği 2. sınıf öğrencisi olarak eğitim, projeler ve teknik becerilerimi içeren güncel CV'mi aşağıdaki linkten indirebilirsiniz.</p>
-    <a href="files/Berkay ILIKOBA CV.pdf" target="_blank" rel="noopener">CV İndir</a>
-  </div>
+<!-- =====================================================
+     BAŞLIK
+====================================================== -->
 
-  <!-- İletişim -->
-  <div class="contact-section">
-    <h2>İletişim</h2>
-    <ul class="contact-list">
-      <li>Email: <a href="mailto:ilikobaberkay@gmail.com">ilikobaberkay@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/berkayilikoba" target="_blank" rel="noopener">github.com/berkayilikoba</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/berkay-ilikoba" target="_blank" rel="noopener">linkedin.com/in/berkay-ilikoba</a></li>
-    </ul>
-  </div>
+<div class="title-wrap" id="title">
+  <h1>
+    Seni seviyorum, iyi ki benimsin.
+  </h1>
 </div>
+
+
+<!-- =====================================================
+     SAHNE
+====================================================== -->
+
+<div class="stage">
+
+
+  <!-- ===================================================
+       BUKET
+  ==================================================== -->
+
+  <div class="bouquet-origin" id="bouquet">
+    
+    <div class="heart-stem"></div>
+
+    <div class="bouquet-stem" style="left:-32px; --rot:-17deg;"></div>
+    <div class="bouquet-stem" style="left:-17px; --rot:-9deg;"></div>
+    <div class="bouquet-stem" style="left:-2px; --rot:-2deg;"></div>
+    <div class="bouquet-stem" style="left:15px; --rot:7deg;"></div>
+    <div class="bouquet-stem" style="left:30px; --rot:15deg;"></div>
+
+    <div class="bouquet-branch" style="--x:-35px; --bottom:35px; --height:105px; --rot:-38deg;"></div>
+    <div class="bouquet-branch" style="--x:35px; --bottom:38px; --height:110px; --rot:38deg;"></div>
+    <div class="bouquet-branch" style="--x:-20px; --bottom:65px; --height:95px; --rot:-28deg;"></div>
+    <div class="bouquet-branch" style="--x:22px; --bottom:65px; --height:95px; --rot:28deg;"></div>
+
+    <div class="bouquet-wrap"></div>
+
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+    <div class="leaf mid-left"></div>
+    <div class="leaf mid-right"></div>
+
+
+    <div class="heart-container" id="heartContainer">
+      <div class="heart-glow"></div>
+      <div class="heart"></div>
+    </div>
+
+  </div>
+
+
+  <!-- ===================================================
+       HEDİYE
+  ==================================================== -->
+
+  <div class="gift" id="gift">
+    <div class="gift-light"></div>
+    <div class="gift-box">
+      <div class="gift-ribbon-vertical"></div>
+      <div class="gift-ribbon-horizontal"></div>
+    </div>
+    <div class="gift-lid"></div>
+    <div class="bow">
+      <div class="bow-left"></div>
+      <div class="bow-right"></div>
+      <div class="bow-center"></div>
+    </div>
+    <div class="click-hint">
+      Dokun 🌼
+    </div>
+  </div>
+
+
+</div>
+
+
+<!-- =====================================================
+     NOT
+====================================================== -->
+
+<div class="note-card" id="noteCard">
+  <p class="note-text" id="myNote">
+Gülüşü güzel kadınlar papatya severmiş.
+
+<span style="font-size: 14px; font-style: italic; color: #777; display: block; margin-top: 15px;">İkimizin de elinde olmayan durumlardan dolayı çiçek gönderemedim. Artık bu şekilde idare edicez. Stajında başarılar sevgilim. Sana güveniyorum. İyi bir asd olacaksın.</span>
+  </p>
+</div>
+
+
+<script>
+
+/* =========================================================
+   YILDIZLAR
+========================================================= */
+const starsContainer = document.getElementById('stars');
+for(let i=0;i<75;i++){
+  const star = document.createElement('div');
+  star.className='star';
+  star.style.left = Math.random()*100+'%';
+  star.style.top = Math.random()*70+'%';
+  star.style.animationDelay = Math.random()*3.5+'s';
+  starsContainer.appendChild(star);
+}
+
+/* =========================================================
+   ELEMENTLER
+========================================================= */
+const gift = document.getElementById('gift');
+const bouquet = document.getElementById('bouquet');
+const title = document.getElementById('title');
+const noteCard = document.getElementById('noteCard');
+const heartContainer = document.getElementById('heartContainer');
+
+/* =========================================================
+   PAPATYA OLUŞTURMA
+========================================================= */
+function makeDaisy(petalCount=14){
+  const wrap = document.createElement('div');
+  wrap.className='sway-wrap';
+  
+  for(let i=0; i<petalCount; i++){
+    const petal = document.createElement('div');
+    petal.className='petal';
+    petal.style.transform = `rotate(${(360/petalCount)*i}deg)`;
+    wrap.appendChild(petal);
+  }
+
+  const center = document.createElement('div');
+  center.className='center-c';
+  wrap.appendChild(center);
+
+  return wrap;
+}
+
+/* =========================================================
+   PAPATYA DÜZENİ
+========================================================= */
+const daisyLayout = [
+  {startX:-26, startY:8, len:320, angle:-17, s:.78, delay:100},
+  {startX:23, startY:7, len:315, angle:18, s:.78, delay:160},
+  {startX:-12, startY:10, len:350, angle:-7, s:.82, delay:220},
+  {startX:10, startY:9, len:350, angle:8, s:.82, delay:270},
+  {startX:-42, startY:10, len:275, angle:-28, s:.88, delay:330},
+  {startX:39, startY:11, len:275, angle:29, s:.88, delay:380},
+  {startX:-20, startY:14, len:245, angle:-10, s:.95, delay:430},
+  {startX:18, startY:14, len:245, angle:11, s:.95, delay:470},
+  {startX:-48, startY:8, len:225, angle:-39, s:.92, delay:520},
+  {startX:45, startY:8, len:225, angle:39, s:.92, delay:560},
+  {startX:-34, startY:15, len:205, angle:-23, s:1, delay:610},
+  {startX:32, startY:15, len:205, angle:23, s:1, delay:650},
+  {startX:-9, startY:18, len:185, angle:-5, s:1.05, delay:700},
+  {startX:8, startY:18, len:185, angle:5, s:1.05, delay:740},
+  {startX:-55, startY:12, len:185, angle:-48, s:.82, delay:790},
+  {startX:53, startY:12, len:185, angle:48, s:.82, delay:830}
+];
+
+
+/* =========================================================
+   PAPATYALARI OLUŞTUR
+========================================================= */
+daisyLayout.forEach((cfg,index)=>{
+  const rad = cfg.angle*Math.PI/180;
+  const dx = cfg.startX + cfg.len*Math.sin(rad);
+  const dy = -(cfg.startY + cfg.len*Math.cos(rad));
+
+  const twig = document.createElement('div');
+  twig.className='twig';
+
+  twig.style.setProperty('--start-x', cfg.startX+'px');
+  twig.style.setProperty('--start-y', cfg.startY+'px');
+  twig.style.setProperty('--len', cfg.len+'px');
+  twig.style.setProperty('--twig-rot', cfg.angle+'deg');
+  twig.style.transitionDelay = cfg.delay*.8+'ms';
+
+  bouquet.appendChild(twig);
+
+  const daisy = document.createElement('div');
+  daisy.className='daisy';
+
+  daisy.style.setProperty('--dx', dx+'px');
+  daisy.style.setProperty('--dy', dy+'px');
+  daisy.style.setProperty('--s', cfg.s);
+  daisy.style.setProperty('--rot', cfg.angle*.45+'deg');
+  daisy.style.setProperty('--sway-delay', Math.random()*2+'s');
+  daisy.style.transitionDelay = cfg.delay+100+'ms';
+
+  daisy.appendChild(makeDaisy(index%3===0 ? 16 : 14));
+  bouquet.appendChild(daisy);
+});
+
+
+/* =========================================================
+   KALP PARÇACIKLARI
+========================================================= */
+function createHeartParticles(){
+  heartContainer.querySelectorAll('.heart-particle').forEach(p=>p.remove());
+  const count=18;
+
+  for(let i=0; i<count; i++){
+    const particle = document.createElement('div');
+    particle.className='heart-particle';
+
+    const angle = (360/count)*i + (Math.random()*18-9);
+    const distance = 65 + Math.random()*80;
+    const rad = angle*Math.PI/180;
+    
+    const x = Math.cos(rad)*distance;
+    const y = Math.sin(rad)*distance;
+
+    particle.style.setProperty('--particle-x', x+'px');
+    particle.style.setProperty('--particle-y', y+'px');
+    particle.style.setProperty('--particle-delay', Math.random()*.08+'s');
+
+    heartContainer.appendChild(particle);
+  }
+}
+
+
+/* =========================================================
+   HEDİYEYE TIKLAMA
+========================================================= */
+let opened = false;
+
+gift.addEventListener('click', ()=>{
+  if(opened) return;
+  opened = true;
+
+  gift.classList.add('open');
+
+  setTimeout(()=>{
+    bouquet.classList.add('bloomed');
+  }, 400);
+
+  setTimeout(()=>{
+    createHeartParticles();
+    heartContainer.classList.add('show');
+  }, 2100);
+
+  setTimeout(()=>{
+    heartContainer.classList.add('explode');
+  }, 3500);
+
+  setTimeout(()=>{
+    title.classList.add('visible');
+  }, 1200);
+
+  setTimeout(()=>{
+    gift.classList.add('hide');
+  }, 1500);
+
+  setTimeout(()=>{
+    noteCard.classList.add('visible');
+  }, 4200);
+});
+
+</script>
+
 </body>
 </html>
