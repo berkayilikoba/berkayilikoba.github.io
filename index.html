@@ -163,6 +163,9 @@ body{
   transition:
     transform .35s ease,
     opacity .7s ease;
+
+   touch-action: manipulation;
+   -webkit-tap-highlight-color: transparent;
 }
 
 .gift:hover{
@@ -846,25 +849,30 @@ body{
 ========================================================= */
 
 .note-card{
-  position:absolute; /* Havada süzülmesi ve aşağıya sabitlenmesi için değiştirildi */
-  bottom:clamp(15px, 4vh, 40px); /* Ekranın alt kısmına hizalar */
+  position:absolute;
+  bottom:clamp(15px, 4vh, 40px);
   left:50%; 
-  z-index:50; /* Çiçeklerin önünde durması için yükseltildi */
+  z-index:50; 
   width:92%;
   max-width:480px;
   background:var(--card-bg);
   border-radius:18px;
   padding:30px;
-  box-shadow:0 20px 45px rgba(0,0,0,.45); /* Gölgesi belirginleştirildi */
+  box-shadow:0 20px 45px rgba(0,0,0,.45);
   opacity:0;
-  /* Başlangıçta 30px aşağıda durur (X ekseninde -50% ile tam ortalar) */
   transform:translate(-50%, 30px);
   transition:opacity .9s ease, transform .9s ease;
+  
+  /* YENİ: Görünmezken tıklamaları engellememesi için kalkanı kaldırıyoruz */
+  pointer-events: none; 
 }
 
 .note-card.visible{
   opacity:1;
-  transform:translate(-50%, 0); /* Yumuşakça yukarı kendi hizasına kayar */
+  transform:translate(-50%, 0); 
+  
+  /* YENİ: Not ekrana gelince tekrar etkileşime (metin kopyalama vs) açık hale gelsin */
+  pointer-events: auto; 
 }
 
 .note-card::before{
